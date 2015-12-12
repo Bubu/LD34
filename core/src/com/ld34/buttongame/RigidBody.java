@@ -10,7 +10,7 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 
-public class MassiveObject{
+public class RigidBody {
 
 	public Sprite sprite;
 	private BodyDef bodyDef;
@@ -20,7 +20,7 @@ public class MassiveObject{
 	public float width;
 	public float height;
 
-	public MassiveObject(String graphicName)
+	public RigidBody(String graphicName, World world, float xPos, float yPos)
 	{
 		Texture img = new Texture(Gdx.files.internal(graphicName));
 		this.sprite = new Sprite(img);
@@ -36,13 +36,9 @@ public class MassiveObject{
 		this.fixtureDef = new FixtureDef();
 		this.fixtureDef.shape = shape;
 		this.fixtureDef.density = 1f;
-	}
-	
-	void createHere(World world, float xPos, float yPos)
-	{
 		this.sprite.setPosition(xPos, yPos);
 		this.bodyDef.position.set(sprite.getX(), sprite.getY());
-		
+
 		this.body = world.createBody(bodyDef);
 		this.body.createFixture(this.fixtureDef);
 	}
