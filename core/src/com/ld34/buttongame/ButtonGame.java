@@ -1,27 +1,49 @@
 package com.ld34.buttongame;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Cursor;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class ButtonGame extends ApplicationAdapter {
-	SpriteBatch batch;
-	Texture img;
+import java.util.LinkedList;
+
+public class ButtonGame extends Game {
+    MenuScreen menuScreen;
+    LevelScreen levelScreen;
+    public boolean isRunning;
+    private Screen currentScreen;
 	
 	@Override
 	public void create () {
-		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
+        menuScreen = new MenuScreen(this);
+        setScreen(menuScreen);
+        //Cursor customCursor = Gdx.graphics.newCursor(new Pixmap(Gdx.files.internal("ButtonCursor.png")), 0, 0);
+        //Gdx.graphics.setCursor(customCursor);
+        //Gdx.input.setCursorCatched(true);
 	}
 
-	@Override
-	public void render () {
-		Gdx.gl.glClearColor(1, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		batch.begin();
-		batch.draw(img, 0, 0);
-		batch.end();
-	}
+    public void resumeGame() {
+        if(!isRunning) start();
+        setScreen(currentScreen);
+    }
+
+    public void quit() {
+        Gdx.app.exit();
+    }
+
+    public void restart() {
+        start();
+        resumeGame();
+    }
+
+    void start() {
+        isRunning = true;
+        levelScreen = new LevelScreen(this);
+        currentScreen = levelScreen;
+    }
 }
