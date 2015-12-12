@@ -13,8 +13,8 @@
    height="1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="drawing.svg">
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Buttons.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -24,16 +24,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="302.86644"
-     inkscape:cy="540.20305"
+     inkscape:zoom="5.6"
+     inkscape:cx="439.63206"
+     inkscape:cy="543.73846"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="719"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-width="1680"
+     inkscape:window-height="988"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -53,137 +53,36 @@
      id="layer1">
     <g
        id="g3072"
-       transform="translate(-22.223356,-3.0304576)"
-       inkscape:export-filename="/home/stephanw/Java/LudumDare/LD34/android/assets/ButtonRed.png"
-       inkscape:export-xdpi="57.061382"
-       inkscape:export-ydpi="57.061382">
+       transform="translate(218.20184,-6.7191815)"
+       inkscape:export-filename="H:\Eigene Dateien\Programming\LD34\android\assets\ButtonCursor.png"
+       inkscape:export-xdpi="36.517086"
+       inkscape:export-ydpi="36.517086">
       <path
-         sodipodi:type="arc"
-         style="fill:#ff0000;stroke:#000000;stroke-width:1.34332025;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         style="fill:#ff0000;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m 238.72656,465.4707 a 38.683468,38.683468 0 0 0 -38.68359,38.6836 38.683468,38.683468 0 0 0 38.68359,38.68359 38.683468,38.683468 0 0 0 38.6836,-38.68359 38.683468,38.683468 0 0 0 -38.6836,-38.6836 z m -6.42773,28.32618 a 3.9285715,3.9285715 0 0 1 3.92773,3.92773 3.9285715,3.9285715 0 0 1 -3.92773,3.92969 3.9285715,3.9285715 0 0 1 -3.92969,-3.92969 3.9285715,3.9285715 0 0 1 3.92969,-3.92773 z m 12.85547,0 a 3.9285715,3.9285715 0 0 1 3.92968,3.92773 3.9285715,3.9285715 0 0 1 -3.92968,3.92969 3.9285715,3.9285715 0 0 1 -3.92774,-3.92969 3.9285715,3.9285715 0 0 1 3.92774,-3.92773 z m -12.85547,12.85742 a 3.9285715,3.9285715 0 0 1 3.92773,3.92773 3.9285715,3.9285715 0 0 1 -3.92773,3.92969 3.9285715,3.9285715 0 0 1 -3.92969,-3.92969 3.9285715,3.9285715 0 0 1 3.92969,-3.92773 z m 12.85547,0 a 3.9285715,3.9285715 0 0 1 3.92968,3.92773 3.9285715,3.9285715 0 0 1 -3.92968,3.92969 3.9285715,3.9285715 0 0 1 -3.92774,-3.92969 3.9285715,3.9285715 0 0 1 3.92774,-3.92773 z"
          id="path3023"
-         sodipodi:cx="271.07144"
-         sodipodi:cy="505.57648"
-         sodipodi:rx="34.642857"
-         sodipodi:ry="34.642857"
-         d="m 305.7143,505.57648 c 0,19.13272 -15.51014,34.64285 -34.64286,34.64285 -19.13272,0 -34.64285,-15.51013 -34.64285,-34.64285 0,-19.13272 15.51013,-34.64286 34.64285,-34.64286 19.13272,0 34.64286,15.51014 34.64286,34.64286 z"
-         transform="matrix(1.1166362,0,0,1.1166362,-41.738239,-57.360501)" />
-      <path
-         transform="translate(-118.69292,-17.67767)"
-         d="m 377.14287,518.43359 c 0,2.16969 -1.75889,3.92858 -3.92858,3.92858 -2.16969,0 -3.92857,-1.75889 -3.92857,-3.92858 0,-2.16969 1.75888,-3.92857 3.92857,-3.92857 2.16969,0 3.92858,1.75888 3.92858,3.92857 z"
-         sodipodi:ry="3.9285715"
-         sodipodi:rx="3.9285715"
-         sodipodi:cy="518.43359"
-         sodipodi:cx="373.21429"
-         id="path2991"
-         style="fill:#ffffff;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         sodipodi:type="arc" />
-      <path
-         transform="translate(-105.83578,-17.67767)"
-         sodipodi:type="arc"
-         style="fill:#ffffff;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         id="path2997"
-         sodipodi:cx="373.21429"
-         sodipodi:cy="518.43359"
-         sodipodi:rx="3.9285715"
-         sodipodi:ry="3.9285715"
-         d="m 377.14287,518.43359 c 0,2.16969 -1.75889,3.92858 -3.92858,3.92858 -2.16969,0 -3.92857,-1.75889 -3.92857,-3.92858 0,-2.16969 1.75888,-3.92857 3.92857,-3.92857 2.16969,0 3.92858,1.75888 3.92858,3.92857 z" />
-      <path
-         transform="matrix(0,-1,1,0,-263.91222,886.82736)"
-         sodipodi:type="arc"
-         style="fill:#ffffff;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         id="path3009"
-         sodipodi:cx="373.21429"
-         sodipodi:cy="518.43359"
-         sodipodi:rx="3.9285715"
-         sodipodi:ry="3.9285715"
-         d="m 377.14287,518.43359 c 0,2.16969 -1.75889,3.92858 -3.92858,3.92858 -2.16969,0 -3.92857,-1.75889 -3.92857,-3.92858 0,-2.16969 1.75888,-3.92857 3.92857,-3.92857 2.16969,0 3.92858,1.75888 3.92858,3.92857 z" />
-      <path
-         d="m 377.14287,518.43359 c 0,2.16969 -1.75889,3.92858 -3.92858,3.92858 -2.16969,0 -3.92857,-1.75889 -3.92857,-3.92858 0,-2.16969 1.75888,-3.92857 3.92857,-3.92857 2.16969,0 3.92858,1.75888 3.92858,3.92857 z"
-         sodipodi:ry="3.9285715"
-         sodipodi:rx="3.9285715"
-         sodipodi:cy="518.43359"
-         sodipodi:cx="373.21429"
-         id="path3011"
-         style="fill:#ffffff;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         sodipodi:type="arc"
-         transform="matrix(0,-1,1,0,-251.05508,886.82736)" />
-      <path
+         transform="translate(22.223356,3.0304576)"
+         inkscape:connector-curvature="0" />
+      <circle
          transform="translate(-10.121504,1.6080032)"
-         d="m 305.7143,505.57648 c 0,19.13272 -15.51014,34.64285 -34.64286,34.64285 -19.13272,0 -34.64285,-15.51013 -34.64285,-34.64285 0,-19.13272 15.51013,-34.64286 34.64285,-34.64286 19.13272,0 34.64286,15.51014 34.64286,34.64286 z"
-         sodipodi:ry="34.642857"
-         sodipodi:rx="34.642857"
-         sodipodi:cy="505.57648"
-         sodipodi:cx="271.07144"
          id="path2987"
-         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         sodipodi:type="arc" />
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         cx="271.07144"
+         cy="505.57648"
+         r="34.642857" />
     </g>
-    <g
-       id="g3080"
-       transform="translate(19.697966,-9.5964498)"
-       inkscape:export-filename="/home/stephanw/Java/LudumDare/LD34/android/assets/ButtonBlue.png"
-       inkscape:export-xdpi="57.061382"
-       inkscape:export-ydpi="57.061382">
-      <path
-         transform="matrix(1.1166362,0,0,1.1166362,70.641232,-57.107963)"
-         d="m 305.7143,505.57648 c 0,19.13272 -15.51014,34.64285 -34.64286,34.64285 -19.13272,0 -34.64285,-15.51013 -34.64285,-34.64285 0,-19.13272 15.51013,-34.64286 34.64285,-34.64286 19.13272,0 34.64286,15.51014 34.64286,34.64286 z"
-         sodipodi:ry="34.642857"
-         sodipodi:rx="34.642857"
-         sodipodi:cy="505.57648"
-         sodipodi:cx="271.07144"
-         id="path3060"
-         style="fill:#008080;stroke:#000000;stroke-width:1.34332025;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         sodipodi:type="arc" />
-      <path
-         sodipodi:type="arc"
-         style="fill:#ffffff;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         id="path3062"
-         sodipodi:cx="373.21429"
-         sodipodi:cy="518.43359"
-         sodipodi:rx="3.9285715"
-         sodipodi:ry="3.9285715"
-         d="m 377.14287,518.43359 c 0,2.16969 -1.75889,3.92858 -3.92858,3.92858 -2.16969,0 -3.92857,-1.75889 -3.92857,-3.92858 0,-2.16969 1.75888,-3.92857 3.92857,-3.92857 2.16969,0 3.92858,1.75888 3.92858,3.92857 z"
-         transform="translate(-6.3134492,-17.425132)" />
-      <path
-         d="m 377.14287,518.43359 c 0,2.16969 -1.75889,3.92858 -3.92858,3.92858 -2.16969,0 -3.92857,-1.75889 -3.92857,-3.92858 0,-2.16969 1.75888,-3.92857 3.92857,-3.92857 2.16969,0 3.92858,1.75888 3.92858,3.92857 z"
-         sodipodi:ry="3.9285715"
-         sodipodi:rx="3.9285715"
-         sodipodi:cy="518.43359"
-         sodipodi:cx="373.21429"
-         id="path3064"
-         style="fill:#ffffff;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         sodipodi:type="arc"
-         transform="translate(6.5436908,-17.425132)" />
-      <path
-         d="m 377.14287,518.43359 c 0,2.16969 -1.75889,3.92858 -3.92858,3.92858 -2.16969,0 -3.92857,-1.75889 -3.92857,-3.92858 0,-2.16969 1.75888,-3.92857 3.92857,-3.92857 2.16969,0 3.92858,1.75888 3.92858,3.92857 z"
-         sodipodi:ry="3.9285715"
-         sodipodi:rx="3.9285715"
-         sodipodi:cy="518.43359"
-         sodipodi:cx="373.21429"
-         id="path3066"
-         style="fill:#ffffff;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         sodipodi:type="arc"
-         transform="matrix(0,-1,1,0,-151.53275,887.0799)" />
-      <path
-         transform="matrix(0,-1,1,0,-138.67561,887.0799)"
-         sodipodi:type="arc"
-         style="fill:#ffffff;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         id="path3068"
-         sodipodi:cx="373.21429"
-         sodipodi:cy="518.43359"
-         sodipodi:rx="3.9285715"
-         sodipodi:ry="3.9285715"
-         d="m 377.14287,518.43359 c 0,2.16969 -1.75889,3.92858 -3.92858,3.92858 -2.16969,0 -3.92857,-1.75889 -3.92857,-3.92858 0,-2.16969 1.75888,-3.92857 3.92857,-3.92857 2.16969,0 3.92858,1.75888 3.92858,3.92857 z" />
-      <path
-         sodipodi:type="arc"
-         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         id="path3070"
-         sodipodi:cx="271.07144"
-         sodipodi:cy="505.57648"
-         sodipodi:rx="34.642857"
-         sodipodi:ry="34.642857"
-         d="m 305.7143,505.57648 c 0,19.13272 -15.51014,34.64285 -34.64286,34.64285 -19.13272,0 -34.64285,-15.51013 -34.64285,-34.64285 0,-19.13272 15.51013,-34.64286 34.64285,-34.64286 19.13272,0 34.64286,15.51014 34.64286,34.64286 z"
-         transform="translate(102.25797,1.8605413)" />
-    </g>
+    <path
+       style="fill:#008080;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 393.02734 459.15625 A 38.683468 38.683468 0 0 0 354.34375 497.83984 A 38.683468 38.683468 0 0 0 393.02734 536.52344 A 38.683468 38.683468 0 0 0 431.71094 497.83984 A 38.683468 38.683468 0 0 0 393.02734 459.15625 z M 386.59961 487.48438 A 3.9285715 3.9285715 0 0 1 390.52734 491.41211 A 3.9285715 3.9285715 0 0 1 386.59961 495.33984 A 3.9285715 3.9285715 0 0 1 382.66992 491.41211 A 3.9285715 3.9285715 0 0 1 386.59961 487.48438 z M 399.45508 487.48438 A 3.9285715 3.9285715 0 0 1 403.38477 491.41211 A 3.9285715 3.9285715 0 0 1 399.45508 495.33984 A 3.9285715 3.9285715 0 0 1 395.52734 491.41211 A 3.9285715 3.9285715 0 0 1 399.45508 487.48438 z M 386.59961 500.33984 A 3.9285715 3.9285715 0 0 1 390.52734 504.26953 A 3.9285715 3.9285715 0 0 1 386.59961 508.19727 A 3.9285715 3.9285715 0 0 1 382.66992 504.26953 A 3.9285715 3.9285715 0 0 1 386.59961 500.33984 z M 399.45508 500.33984 A 3.9285715 3.9285715 0 0 1 403.38477 504.26953 A 3.9285715 3.9285715 0 0 1 399.45508 508.19727 A 3.9285715 3.9285715 0 0 1 395.52734 504.26953 A 3.9285715 3.9285715 0 0 1 399.45508 500.33984 z "
+       id="path3060"
+       inkscape:export-filename="H:\Eigene Dateien\Programming\LD34\android\assets\ButtonBlue.png"
+       inkscape:export-xdpi="57"
+       inkscape:export-ydpi="57" />
+    <circle
+       r="34.642857"
+       cy="497.84058"
+       cx="393.02737"
+       id="path3070"
+       style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   </g>
 </svg>
