@@ -28,7 +28,18 @@ public class MenuScreen extends ScreenAdapter {
         this.game = game;
 
         stage = new Stage(new ScreenViewport());
-        stage.addListener(Ressources.EscListener(game));
+        stage.addListener(new InputListener() {
+            @Override
+            public boolean keyDown(InputEvent event, int keycode) {
+                if(keycode == Input.Keys.ESCAPE && game.isRunning){
+                    game.resumeGame();
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+        });
 
         group = new VerticalGroup();
         stage.addActor(group);
