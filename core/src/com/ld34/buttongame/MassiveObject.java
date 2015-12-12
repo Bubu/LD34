@@ -54,6 +54,17 @@ public class MassiveObject{
 		batch.draw(sprite, sprite.getX(), sprite.getY(),sprite.getOriginX(),
                 sprite.getOriginY(), sprite.getWidth(),sprite.getHeight(),
                 sprite.getScaleX(),sprite.getScaleY(),sprite.getRotation());
+		
+	}
+	
+	float getCenterX()
+	{
+		return body.getPosition().x + width/2;
+	}
+	
+	float getCenterY()
+	{
+		return body.getPosition().y + height/2;
 	}
 	
 }
