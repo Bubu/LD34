@@ -20,7 +20,10 @@ public class Level {
 
             @Override
             public void beginContact(Contact contact) {
-                buttonRed.clack.play();
+                GameObject objectA = (GameObject) contact.getFixtureA().getBody().getUserData();
+                GameObject objectB = (GameObject) contact.getFixtureB().getBody().getUserData();
+                objectA.handleCollision();
+                objectB.handleCollision();
             }
 
             @Override

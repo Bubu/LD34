@@ -14,14 +14,7 @@ import com.badlogic.gdx.physics.box2d.World;
 
 public class Button extends GameObject{
 
-    public final Sound clack;
-    private final Sound click;
-	public float width;
-	public float height;
-
 	public Button(World world, float xPos, float yPos) {
-        clack = Gdx.audio.newSound(Gdx.files.internal("sounds/clack.wav"));
-        click = Gdx.audio.newSound(Gdx.files.internal("sounds/click.wav"));
 		Texture img = new Texture(Gdx.files.internal("graphics/ButtonRed.png"));
 		this.sprite = new Sprite(img);
 		this.height = this.sprite.getHeight();
@@ -43,6 +36,7 @@ public class Button extends GameObject{
 
 		this.body = world.createBody(bodyDef);
 		this.body.createFixture(fixtureDef);
+        super.init();
 	}
 	
 	double getCenterX()
@@ -57,6 +51,6 @@ public class Button extends GameObject{
 
     public void startMove(float x,float y) {
         body.setLinearVelocity(x,y);
-        click.play();
+        Resources.getInstance().click.play();
     }
 }

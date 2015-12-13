@@ -2,12 +2,15 @@ package com.ld34.buttongame;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.scenes.scene2d.EventListener;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 public final class Resources {
+    final Sound clack;
+    final Sound click;
     private Skin skin;
 
     final static float PIXELS_TO_METERS = 100f;
@@ -24,6 +27,8 @@ public final class Resources {
 
     private Resources() {
         skin = new Skin(Gdx.files.internal("ui/uiskin.json"));
+        clack = Gdx.audio.newSound(Gdx.files.internal("sounds/clack.wav"));
+        click = Gdx.audio.newSound(Gdx.files.internal("sounds/click.wav"));
     }
 
     public static Skin Skin(){

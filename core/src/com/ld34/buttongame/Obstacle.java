@@ -25,5 +25,11 @@ public class Obstacle extends GameObject{
 
         body = world.createBody(bodyDef);
         body.createFixture(fixtureDef);
+        super.init();
+    }
+
+    @Override
+    public void handleCollision() {
+        Resources.getInstance().clack.play();
     }
 }
