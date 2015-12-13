@@ -2,6 +2,7 @@ package com.ld34.buttongame;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Cursor;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -12,10 +13,13 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.utils.Timer;
+
+import java.util.ArrayList;
 
 public class LevelScreen extends ScreenAdapter {
     private final SpriteBatch batch;
-    private final Sprite buttonBlue;
+    final Sprite buttonBlue;
     ButtonGame game;
     InputHandler inputHandler;
     OrthographicCamera camera;
@@ -33,8 +37,7 @@ public class LevelScreen extends ScreenAdapter {
         this.game = game;
         this.inputHandler = new InputHandler(game);
         this.batch = new SpriteBatch();
-        Texture img = new Texture(Gdx.files.internal("graphics/ButtonBlue.png"));
-        this.buttonBlue = new Sprite(img);
+        this.buttonBlue = new Sprite(Resources.getInstance().cursor);
     }
 
     public void render(float delta) {
@@ -64,10 +67,14 @@ public class LevelScreen extends ScreenAdapter {
         Gdx.gl.glClearColor(0.4f, 0.5f, 0.9f, 1);
         Gdx.input.setInputProcessor(this.inputHandler);
         Gdx.graphics.setCursor(customCursor);
+        Timer.instance().start();
+        Resources.getInstance().powerdown.resume();
     }
 
     public void hide () {
         Gdx.graphics.setCursor(null);
+        Timer.instance().stop();
+        Resources.getInstance().powerdown.pause();
     }
 
     public void dispose() {

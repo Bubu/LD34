@@ -32,17 +32,18 @@ public class InputHandler implements InputProcessor {
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
         Vector3 worldCoords = game.levelScreen.camera.unproject(new Vector3(screenX, screenY,0));
-        double dist = Math.sqrt(Math.pow(worldCoords.x - game.currentLevel.buttonRed.getCenterX(),2.0) + Math.pow(worldCoords.y - game.currentLevel.buttonRed.getCenterY(),2.0));
+        double dist = Math.sqrt(Math.pow(worldCoords.x - game.currentLevel.buttonRed.getCenterX(),2.0) + Math.pow(worldCoords.y - game.currentLevel.buttonRed.getCenterY(), 2.0));
         if(dist<game.currentLevel.buttonRed.height) {
         	buttonPressed = true;
         }
+        game.levelScreen.buttonBlue.setTexture(Resources.getInstance().cursorPressed);
         return true;
     }
     
     @Override
     public boolean touchDragged(int screenX, int screenY, int pointer) {
         Vector3 worldCoords = game.levelScreen.camera.unproject(new Vector3(screenX, screenY,0));
-    	double dist = Math.sqrt(Math.pow(worldCoords.x - game.currentLevel.buttonRed.getCenterX(),2.0) + Math.pow(worldCoords.y - game.currentLevel.buttonRed.getCenterY(),2.0));
+    	double dist = Math.sqrt(Math.pow(worldCoords.x - game.currentLevel.buttonRed.getCenterX(),2.0) + Math.pow(worldCoords.y - game.currentLevel.buttonRed.getCenterY(), 2.0));
     	if(buttonPressed) {
         	if(dist>game.currentLevel.buttonRed.height) {
         		game.currentLevel.buttonRed.startMove((float)((game.currentLevel.buttonRed.getCenterX() - worldCoords.x)/dist * 10), (float)((game.currentLevel.buttonRed.getCenterY() - worldCoords.y )/dist * 10));
@@ -55,6 +56,7 @@ public class InputHandler implements InputProcessor {
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
     	buttonPressed = false;
+        game.levelScreen.buttonBlue.setTexture(Resources.getInstance().cursor);
     	return true;
     }
 

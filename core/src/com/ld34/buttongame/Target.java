@@ -12,6 +12,7 @@ import com.badlogic.gdx.utils.Timer;
 public class Target extends GameObject {
     Texture imgOn;
     Texture imgOff;
+    Timer.Task winTask;
     boolean state = true;
     public Target(ButtonGame game, World world, float posX, float posY) {
         super(game);
@@ -49,17 +50,19 @@ public class Target extends GameObject {
                     Resources.getInstance().powerdown.play();
                 }
             }, 0.1f);
-            Timer.schedule(new Timer.Task() {
+            winTask = new Timer.Task() {
                 @Override
                 public void run() {
                     game.handleWin();
                 }
-            }, 3f);
+            };
+            Timer.schedule(winTask, 3f);
         }
         if(!state) {
             sprite.setTexture(imgOn);
             Resources.getInstance().on.play();
             Resources.getInstance().powerdown.stop();
+            winTask.cancel();
         }
         state = !state;
 }

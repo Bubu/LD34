@@ -13,7 +13,7 @@ public class DesktopLauncher {
 		//cfg.addIcon("icon32.png", FileType.Internal);
 		//cfg.addIcon("icon32.png", FileType.Internal);
 		cfg.title = "Button Sniper";
-		cfg.height = 720;
+		cfg.height = 700;
 		cfg.width = 800;
 		cfg.resizable = false;
 		new LwjglApplication(new ButtonGame(), cfg);

@@ -44,7 +44,7 @@ public class MenuScreen extends ScreenAdapter {
         group = new VerticalGroup();
         stage.addActor(group);
         group.center();
-        Label titel = new Label("A tale of Two Buttons", Resources.Skin().get("title",LabelStyle.class));
+        Label titel = new Label("Button Sniper", Resources.Skin().get("title",LabelStyle.class));
         group.addActor(titel);
         startbutton = new TextButton("Start the game!", Resources.Skin());
         startbutton.addListener(new ChangeListener() {
