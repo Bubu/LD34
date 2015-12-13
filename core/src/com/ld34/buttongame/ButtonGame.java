@@ -17,14 +17,12 @@ public class ButtonGame extends Game {
     LevelScreen levelScreen;
     public boolean isRunning;
     private Screen currentScreen;
-	
-	@Override
+    Level currentLevel;
+
+    @Override
 	public void create () {
         menuScreen = new MenuScreen(this);
         setScreen(menuScreen);
-        //Cursor customCursor = Gdx.graphics.newCursor(new Pixmap(Gdx.files.internal("ButtonCursor.png")), 0, 0);
-        //Gdx.graphics.setCursor(customCursor);
-        //Gdx.input.setCursorCatched(true);
 	}
 
     public void resumeGame() {
@@ -43,6 +41,7 @@ public class ButtonGame extends Game {
 
     void start() {
         isRunning = true;
+        currentLevel = new Level1();
         levelScreen = new LevelScreen(this);
         currentScreen = levelScreen;
     }

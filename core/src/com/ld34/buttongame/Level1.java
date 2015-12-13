@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 
 public class Level1 extends Level{
 
-    public Level1(LevelScreen screen) {
+    public Level1() {
         if(Resources.DEBUG){
             new Obstacle(world,0,0,5, Gdx.graphics.getHeight());
             new Obstacle(world,0,Gdx.graphics.getHeight()-5,Gdx.graphics.getWidth(),5);

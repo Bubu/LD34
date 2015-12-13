@@ -17,7 +17,6 @@ public class LevelScreen extends ScreenAdapter {
     private final SpriteBatch batch;
     private final Sprite buttonBlue;
     ButtonGame game;
-    Level1 currentLevel;
     InputHandler inputHandler;
     OrthographicCamera camera;
     Box2DDebugRenderer debugRenderer;
@@ -34,7 +33,6 @@ public class LevelScreen extends ScreenAdapter {
         this.game = game;
         this.inputHandler = new InputHandler(game);
         this.batch = new SpriteBatch();
-        currentLevel = new Level1(this);
         Texture img = new Texture(Gdx.files.internal("ButtonBlue.png"));
         this.buttonBlue = new Sprite(img);
     }
@@ -42,12 +40,12 @@ public class LevelScreen extends ScreenAdapter {
     public void render(float delta) {
         camera.update();
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        currentLevel.world.step(1f / 60f, 8, 3);
+        game.currentLevel.world.step(1f / 60f, 8, 3);
         batch.setProjectionMatrix(camera.combined);
         debugMatrix = batch.getProjectionMatrix().cpy().scale(Resources.PIXELS_TO_METERS,
                 Resources.PIXELS_TO_METERS, 0);
         batch.begin();
-        for(GameObject object:currentLevel.objects) {
+        for(GameObject object:game.currentLevel.objects) {
             object.draw(batch);
         }
         Vector3 worldCoords = camera.unproject(new Vector3(Gdx.input.getX(),Gdx.input.getY(), 0));
@@ -55,7 +53,7 @@ public class LevelScreen extends ScreenAdapter {
         buttonBlue.draw(batch);
         batch.end();
         if(Resources.DEBUG) {
-            debugRenderer.render(currentLevel.world, debugMatrix);
+            debugRenderer.render(game.currentLevel.world, debugMatrix);
         }
     }
 
