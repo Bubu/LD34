@@ -7,18 +7,22 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
-public final class Ressources {
+public final class Resources {
     private Skin skin;
-    private static Ressources instance = null;
 
-    public static Ressources getInstance() {
+    final static float PIXELS_TO_METERS = 100f;
+    final static boolean DEBUG = true;
+    final static int BUTTON_RADIUS = 25;
+    private static Resources instance = null;
+
+    public static Resources getInstance() {
         if(instance == null) {
-            instance = new Ressources();
+            instance = new Resources();
         }
         return instance;
     }
 
-    private Ressources() {
+    private Resources() {
         skin = new Skin(Gdx.files.internal("uiskin.json"));
     }
 
@@ -27,7 +31,7 @@ public final class Ressources {
     }
 
     public static EventListener EscListener(final ButtonGame game) {
-        InputListener esclistner = new InputListener() {
+        return new InputListener() {
             @Override
             public boolean keyDown(InputEvent event, int keycode) {
                 if(keycode == Input.Keys.ESCAPE ){
@@ -39,7 +43,6 @@ public final class Ressources {
                 }
             }
         };
-        return esclistner;
 
     }
 }

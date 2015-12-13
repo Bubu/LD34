@@ -8,7 +8,7 @@ import com.badlogic.gdx.math.Vector3;
 
 public class InputHandler implements InputProcessor {
     private final ButtonGame game;
-	private boolean mouseDown;
+	private boolean buttonPressed;
 
     @Override
     public boolean keyDown(int keycode) {
@@ -31,47 +31,31 @@ public class InputHandler implements InputProcessor {
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-        //buttonRed.body.applyForce(10000f,10000f,screenX,screenY,true);
-        //buttonRed.body.setLinearVelocity(1000f, 0f);
-        Gdx.app.log("Klicked", "True");
         Vector3 worldCoords = game.levelScreen.camera.unproject(new Vector3(screenX, screenY,0));
-        double dist = Math.sqrt(Math.pow(screenX - game.levelScreen.buttonRed.getCenterX(),2.0d) + Math.pow(screenY - game.levelScreen.buttonRed.getCenterY(),2.0d));
-        Gdx.app.log("FFF", "" + game.levelScreen.buttonRed.body.getPosition().y + " " + game.levelScreen.buttonRed.sprite.getY());
-        Gdx.app.log("Mouse", "" + worldCoords.y);
-        
-        if(dist<game.levelScreen.buttonRed.height/2)
-        {
-        	mouseDown = true;
-        	Gdx.app.log("GGG", "" + dist);
-        	
+        double dist = Math.sqrt(Math.pow(worldCoords.x - game.levelScreen.currentLevel.buttonRed.getCenterX(),2.0) + Math.pow(worldCoords.y - game.levelScreen.currentLevel.buttonRed.getCenterY(),2.0));
+        if(dist<game.levelScreen.currentLevel.buttonRed.height) {
+        	buttonPressed = true;
         }
-        
         return true;
     }
     
     @Override
-    public boolean touchDragged(int screenX, int screenY, int pointer)
-    {
-    	double dist = Math.sqrt(Math.pow(screenX - game.levelScreen.buttonRed.getCenterX(),2.0d) + Math.pow(screenY - game.levelScreen.buttonRed.getCenterY(),2.0d));
-    	
-
-    	if(mouseDown)
-    	{
-        	if(dist>game.levelScreen.buttonRed.height/2)
-        	{
-        		game.levelScreen.buttonRed.body.setLinearVelocity(-(screenX - game.levelScreen.buttonRed.getCenterX()), (screenY - game.levelScreen.buttonRed.getCenterY()));
-        		mouseDown = false;
+    public boolean touchDragged(int screenX, int screenY, int pointer) {
+        Vector3 worldCoords = game.levelScreen.camera.unproject(new Vector3(screenX, screenY,0));
+    	double dist = Math.sqrt(Math.pow(worldCoords.x - game.levelScreen.currentLevel.buttonRed.getCenterX(),2.0) + Math.pow(worldCoords.y - game.levelScreen.currentLevel.buttonRed.getCenterY(),2.0));
+    	if(buttonPressed) {
+        	if(dist>game.levelScreen.currentLevel.buttonRed.height) {
+        		game.levelScreen.currentLevel.buttonRed.startMove((float)((game.levelScreen.currentLevel.buttonRed.getCenterX() - worldCoords.x)/dist * 10), (float)((game.levelScreen.currentLevel.buttonRed.getCenterY() - worldCoords.y )/dist * 10));
+        		buttonPressed = false;
         	}
     	}
-
     	return true;
     }
 
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-        
-    	mouseDown = false;
-    	
+        Vector3 worldCoords = game.levelScreen.camera.unproject(new Vector3(screenX, screenY,0));
+    	buttonPressed = false;
     	return false;
     }
 
