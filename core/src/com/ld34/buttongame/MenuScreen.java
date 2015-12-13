@@ -48,7 +48,7 @@ public class MenuScreen extends ScreenAdapter {
         group.addActor(titel);
         startbutton = new TextButton("Start the game!", Resources.Skin());
         startbutton.addListener(new ChangeListener() {
-            public void changed (ChangeEvent event, Actor actor) {
+            public void changed(ChangeEvent event, Actor actor) {
                 game.resumeGame();
             }
         });
@@ -60,6 +60,13 @@ public class MenuScreen extends ScreenAdapter {
             }
         });
 
+        TextButton selectButton = new TextButton("Select Level!", Resources.Skin());
+        selectButton.addListener(new ChangeListener() {
+            public void changed(ChangeEvent event, Actor actor) {
+                game.levelSelect();
+            }
+        });
+
         quitbutton = new TextButton("Quit", Resources.Skin());
         quitbutton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
@@ -67,6 +74,7 @@ public class MenuScreen extends ScreenAdapter {
             }
         });
         group.addActor(startbutton);
+        group.addActor(selectButton);
         group.addActor(quitbutton);
         group.space(20);
         group.padBottom(300);

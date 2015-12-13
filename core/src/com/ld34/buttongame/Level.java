@@ -63,4 +63,6 @@ public abstract class Level {
     }
 
     abstract Level getNextLevel();
+
+    abstract int getNumber();
 }

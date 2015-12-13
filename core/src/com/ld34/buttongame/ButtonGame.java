@@ -40,8 +40,7 @@ public class ButtonGame extends Game {
     }
 
     public void restart() {
-        start();
-        resumeGame();
+        startLevel(Level.get(this, currentLevel.getNumber()));
     }
 
     void start() {
@@ -66,6 +65,7 @@ public class ButtonGame extends Game {
     public void startLevel(Level level) {
         if(level != null) {
             currentLevel = level;
+            currentScreen = levelScreen;
             setScreen(levelScreen);
         }
     }
