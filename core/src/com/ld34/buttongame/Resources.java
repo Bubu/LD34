@@ -23,7 +23,7 @@ public final class Resources {
     }
 
     private Resources() {
-        skin = new Skin(Gdx.files.internal("uiskin.json"));
+        skin = new Skin(Gdx.files.internal("ui/uiskin.json"));
     }
 
     public static Skin Skin(){

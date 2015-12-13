@@ -24,7 +24,7 @@ public class LevelScreen extends ScreenAdapter {
     Cursor customCursor;
 
     public LevelScreen(final ButtonGame game) {
-        customCursor = Gdx.graphics.newCursor(new Pixmap(Gdx.files.internal("EmptyCursor.png")), 0, 0);
+        customCursor = Gdx.graphics.newCursor(new Pixmap(Gdx.files.internal("graphics/EmptyCursor.png")), 0, 0);
     	camera= new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
     	camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         if(Resources.DEBUG){
@@ -33,7 +33,7 @@ public class LevelScreen extends ScreenAdapter {
         this.game = game;
         this.inputHandler = new InputHandler(game);
         this.batch = new SpriteBatch();
-        Texture img = new Texture(Gdx.files.internal("ButtonBlue.png"));
+        Texture img = new Texture(Gdx.files.internal("graphics/ButtonBlue.png"));
         this.buttonBlue = new Sprite(img);
     }
 

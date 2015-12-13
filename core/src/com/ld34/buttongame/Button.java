@@ -22,7 +22,7 @@ public class Button extends GameObject{
 	public Button(World world, float xPos, float yPos) {
         clack = Gdx.audio.newSound(Gdx.files.internal("sounds/clack.wav"));
         click = Gdx.audio.newSound(Gdx.files.internal("sounds/click.wav"));
-		Texture img = new Texture(Gdx.files.internal("ButtonRed.png"));
+		Texture img = new Texture(Gdx.files.internal("graphics/ButtonRed.png"));
 		this.sprite = new Sprite(img);
 		this.height = this.sprite.getHeight();
 		this.width = this.sprite.getWidth();
