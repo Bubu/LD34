@@ -7,16 +7,43 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="744.09448819"
    height="1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.91 r"
    sodipodi:docname="Buttons.svg">
   <defs
-     id="defs4" />
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient10611">
+      <stop
+         style="stop-color:#008080;stop-opacity:1;"
+         offset="0"
+         id="stop10613" />
+      <stop
+         id="stop10619"
+         offset="0.5"
+         style="stop-color:#001515;stop-opacity:1" />
+      <stop
+         style="stop-color:#008080;stop-opacity:1"
+         offset="1"
+         id="stop10615" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient10611"
+       id="linearGradient10617"
+       x1="302.23825"
+       y1="664.90216"
+       x2="346.50769"
+       y2="709.09637"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -24,16 +51,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6"
-     inkscape:cx="439.63206"
-     inkscape:cy="543.73846"
+     inkscape:zoom="1.4"
+     inkscape:cx="317.78038"
+     inkscape:cy="383.02417"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1680"
-     inkscape:window-height="988"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-width="1366"
+     inkscape:window-height="719"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -43,7 +70,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -73,16 +100,39 @@
     </g>
     <path
        style="fill:#008080;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="M 393.02734 459.15625 A 38.683468 38.683468 0 0 0 354.34375 497.83984 A 38.683468 38.683468 0 0 0 393.02734 536.52344 A 38.683468 38.683468 0 0 0 431.71094 497.83984 A 38.683468 38.683468 0 0 0 393.02734 459.15625 z M 386.59961 487.48438 A 3.9285715 3.9285715 0 0 1 390.52734 491.41211 A 3.9285715 3.9285715 0 0 1 386.59961 495.33984 A 3.9285715 3.9285715 0 0 1 382.66992 491.41211 A 3.9285715 3.9285715 0 0 1 386.59961 487.48438 z M 399.45508 487.48438 A 3.9285715 3.9285715 0 0 1 403.38477 491.41211 A 3.9285715 3.9285715 0 0 1 399.45508 495.33984 A 3.9285715 3.9285715 0 0 1 395.52734 491.41211 A 3.9285715 3.9285715 0 0 1 399.45508 487.48438 z M 386.59961 500.33984 A 3.9285715 3.9285715 0 0 1 390.52734 504.26953 A 3.9285715 3.9285715 0 0 1 386.59961 508.19727 A 3.9285715 3.9285715 0 0 1 382.66992 504.26953 A 3.9285715 3.9285715 0 0 1 386.59961 500.33984 z M 399.45508 500.33984 A 3.9285715 3.9285715 0 0 1 403.38477 504.26953 A 3.9285715 3.9285715 0 0 1 399.45508 508.19727 A 3.9285715 3.9285715 0 0 1 395.52734 504.26953 A 3.9285715 3.9285715 0 0 1 399.45508 500.33984 z "
+       d="m 329.45591,469.87054 a 38.683468,38.683468 0 0 0 -38.68359,38.68359 38.683468,38.683468 0 0 0 38.68359,38.6836 38.683468,38.683468 0 0 0 38.6836,-38.6836 38.683468,38.683468 0 0 0 -38.6836,-38.68359 z m -6.42773,28.32813 a 3.9285715,3.9285715 0 0 1 3.92773,3.92773 3.9285715,3.9285715 0 0 1 -3.92773,3.92773 3.9285715,3.9285715 0 0 1 -3.92969,-3.92773 3.9285715,3.9285715 0 0 1 3.92969,-3.92773 z m 12.85547,0 a 3.9285715,3.9285715 0 0 1 3.92969,3.92773 3.9285715,3.9285715 0 0 1 -3.92969,3.92773 3.9285715,3.9285715 0 0 1 -3.92774,-3.92773 3.9285715,3.9285715 0 0 1 3.92774,-3.92773 z m -12.85547,12.85546 a 3.9285715,3.9285715 0 0 1 3.92773,3.92969 3.9285715,3.9285715 0 0 1 -3.92773,3.92774 3.9285715,3.9285715 0 0 1 -3.92969,-3.92774 3.9285715,3.9285715 0 0 1 3.92969,-3.92969 z m 12.85547,0 a 3.9285715,3.9285715 0 0 1 3.92969,3.92969 3.9285715,3.9285715 0 0 1 -3.92969,3.92774 3.9285715,3.9285715 0 0 1 -3.92774,-3.92774 3.9285715,3.9285715 0 0 1 3.92774,-3.92969 z"
        id="path3060"
        inkscape:export-filename="H:\Eigene Dateien\Programming\LD34\android\assets\ButtonBlue.png"
        inkscape:export-xdpi="57"
-       inkscape:export-ydpi="57" />
+       inkscape:export-ydpi="57"
+       inkscape:connector-curvature="0" />
     <circle
        r="34.642857"
-       cy="497.84058"
-       cx="393.02737"
+       cy="508.55487"
+       cx="329.45593"
        id="path3070"
        style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <g
+       id="g10621"
+       transform="translate(6.4285714,-85)"
+       inkscape:export-filename="/home/stephanw/Java/LudumDare/LD34/android/assets/ButtonPressed.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81">
+      <path
+         sodipodi:nodetypes="ssssscccccccccccccccccccc"
+         style="fill:url(#linearGradient10617);fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m 323.74162,648.44197 c -21.36438,-7e-5 -38.68366,17.31921 -38.68359,38.68359 -7e-5,21.36439 17.3192,38.68367 38.68359,38.6836 21.36439,7e-5 38.68367,-17.31921 38.6836,-38.6836 7e-5,-21.36439 -17.31921,-38.68366 -38.6836,-38.68359 z m -5.53487,29.31027 c 2.16903,4.7e-4 3.92726,1.7587 3.92773,3.92773 -4.7e-4,2.16904 -1.7587,3.92727 -3.92773,3.92773 -2.1698,6.2e-4 -3.92923,-1.75793 -3.92969,-3.92773 4.6e-4,-2.1698 1.75989,-3.92834 3.92969,-3.92773 z m 13.65904,-2.94643 c 2.1698,-6.2e-4 3.92923,1.75793 3.92969,3.92773 -4.6e-4,2.1698 -1.75989,3.92835 -3.92969,3.92773 -2.16904,-4.6e-4 -3.92728,-1.75869 -3.92774,-3.92773 4.6e-4,-2.16904 1.7587,-3.92727 3.92774,-3.92773 z m -16.51619,16.60546 c 2.1698,4.6e-4 3.92835,1.75989 3.92773,3.92969 -4.6e-4,2.16904 -1.75869,3.92728 -3.92773,3.92774 -2.1698,6.2e-4 -3.92923,-1.75794 -3.92969,-3.92774 -6.2e-4,-2.17056 1.75913,-3.93031 3.92969,-3.92969 z m 13.9269,-2.94642 c 2.17057,-6.2e-4 3.93031,1.75912 3.92969,3.92969 -4.6e-4,2.1698 -1.75988,3.92835 -3.92969,3.92774 -2.16904,-4.6e-4 -3.92728,-1.7587 -3.92774,-3.92774 -6.1e-4,-2.16981 1.75794,-3.92924 3.92774,-3.92969 z"
+         id="path10587"
+         inkscape:export-filename="H:\Eigene Dateien\Programming\LD34\android\assets\ButtonBlue.png"
+         inkscape:export-xdpi="57"
+         inkscape:export-ydpi="57"
+         inkscape:connector-curvature="0" />
+      <circle
+         r="34.642857"
+         cy="687.12628"
+         cx="323.74164"
+         id="circle10589"
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
   </g>
 </svg>

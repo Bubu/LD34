@@ -21,6 +21,7 @@ public class ButtonGame extends Game {
     Level currentLevel;
     private SelectionScreen selectionScreen;
     Preferences prefs;
+	private DialogueScreen dialogueScreen;
 
     @Override
 	public void create () {
@@ -48,7 +49,8 @@ public class ButtonGame extends Game {
         currentLevel = new Level1(this);
         levelScreen = new LevelScreen(this);
         selectionScreen = new SelectionScreen(this);
-        currentScreen = selectionScreen;
+        dialogueScreen = new DialogueScreen(this);
+        currentScreen = dialogueScreen;
     }
 
     public void handleWin() {
