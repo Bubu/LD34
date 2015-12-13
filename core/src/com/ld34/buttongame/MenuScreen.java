@@ -44,23 +44,23 @@ public class MenuScreen extends ScreenAdapter {
         group = new VerticalGroup();
         stage.addActor(group);
         group.center();
-        Label titel = new Label("A tale of Two Buttons", Ressources.Skin().get("title",LabelStyle.class));
+        Label titel = new Label("A tale of Two Buttons", Resources.Skin().get("title",LabelStyle.class));
         group.addActor(titel);
-        startbutton = new TextButton("Start the game!", Ressources.Skin());
+        startbutton = new TextButton("Start the game!", Resources.Skin());
         startbutton.addListener(new ChangeListener() {
             public void changed (ChangeEvent event, Actor actor) {
                 game.resumeGame();
             }
         });
 
-        restartbutton = new TextButton("Restart!", Ressources.Skin());
+        restartbutton = new TextButton("Restart!", Resources.Skin());
         restartbutton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
                 game.restart();
             }
         });
 
-        quitbutton = new TextButton("Quit", Ressources.Skin());
+        quitbutton = new TextButton("Quit", Resources.Skin());
         quitbutton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
                 game.quit();
