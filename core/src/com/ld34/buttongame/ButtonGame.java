@@ -69,4 +69,9 @@ public class ButtonGame extends Game {
             setScreen(levelScreen);
         }
     }
+
+    public void levelSelect() {
+        currentScreen = selectionScreen;
+        setScreen(currentScreen);
+    }
 }

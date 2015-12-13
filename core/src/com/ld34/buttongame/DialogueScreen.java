@@ -47,10 +47,10 @@ public class DialogueScreen extends ScreenAdapter {
 	            @Override
 	            public boolean touchDown(InputEvent event, float screenX, float screenY, int pointer, int button) {
 	            	
-	            	if(count<=maxCount){
+	            	if(count<maxCount){
 	            		count = advanceDialogue(count);	            		
 	            	}else{
-	            		Gdx.app.log("Todo","next Screen");
+	            		game.levelSelect();
 	            	}
 	            	return true;
 	            }
@@ -77,8 +77,6 @@ public class DialogueScreen extends ScreenAdapter {
 	    public void show() {
 	        Gdx.gl.glClearColor(0, 0, 0, 1);
 	        Gdx.input.setInputProcessor(stage);
-	        
-	        
 	    }
 	    
 	    public int advanceDialogue(int currCount) {
