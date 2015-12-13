@@ -9,7 +9,8 @@ import com.badlogic.gdx.physics.box2d.World;
 
 public class Obstacle extends GameObject{
 
-    public Obstacle(World world, float xPos, float yPos, float sizeX, float sizeY) {
+    public Obstacle(ButtonGame game, World world, float xPos, float yPos, float sizeX, float sizeY) {
+        super(game);
         BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.StaticBody;
 
@@ -25,5 +26,11 @@ public class Obstacle extends GameObject{
 
         body = world.createBody(bodyDef);
         body.createFixture(fixtureDef);
+        super.init();
+    }
+
+    @Override
+    public void handleCollision() {
+        Resources.getInstance().clack.play();
     }
 }
