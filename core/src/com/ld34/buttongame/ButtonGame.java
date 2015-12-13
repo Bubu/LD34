@@ -18,6 +18,7 @@ public class ButtonGame extends Game {
     public boolean isRunning;
     private Screen currentScreen;
     Level currentLevel;
+	private DialogueScreen dialogueScreen;
 
     @Override
 	public void create () {
@@ -43,7 +44,8 @@ public class ButtonGame extends Game {
         isRunning = true;
         currentLevel = new Level1(this);
         levelScreen = new LevelScreen(this);
-        currentScreen = levelScreen;
+        dialogueScreen = new DialogueScreen(this);
+        currentScreen = dialogueScreen;
     }
 
     public void handleWin() {
