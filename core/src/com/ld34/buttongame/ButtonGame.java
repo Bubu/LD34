@@ -41,8 +41,13 @@ public class ButtonGame extends Game {
 
     void start() {
         isRunning = true;
-        currentLevel = new Level1();
+        currentLevel = new Level1(this);
         levelScreen = new LevelScreen(this);
         currentScreen = levelScreen;
+    }
+
+    public void handleWin() {
+        levelScreen.showWinDialog();
+        currentLevel = currentLevel.getNextLevel();
     }
 }

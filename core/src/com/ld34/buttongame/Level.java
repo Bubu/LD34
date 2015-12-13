@@ -9,11 +9,14 @@ import com.badlogic.gdx.physics.box2d.World;
 
 import java.util.ArrayList;
 
-public class Level {
+public abstract class Level {
     ArrayList<GameObject> objects;
     final World world;
     Button buttonRed;
-    public Level() {
+    public ButtonGame game;
+
+    public Level(ButtonGame game) {
+        this.game = game;
         objects = new ArrayList<GameObject>();
         world = new World(new Vector2(0, 0f), true);
         world.setContactListener(new ContactListener() {
@@ -42,4 +45,6 @@ public class Level {
             }
         });
     }
+
+    abstract Level getNextLevel();
 }

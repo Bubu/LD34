@@ -7,12 +7,14 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.Timer;
 
 public class Target extends GameObject {
     Texture imgOn;
     Texture imgOff;
     boolean state = true;
-    public Target(World world, float posX, float posY) {
+    public Target(ButtonGame game, World world, float posX, float posY) {
+        super(game);
         imgOn = new Texture(Gdx.files.internal("graphics/TriggerOn.png"));
         imgOff = new Texture(Gdx.files.internal("graphics/TriggerOff.png"));
         sprite = new Sprite(imgOn);
@@ -38,8 +40,27 @@ public class Target extends GameObject {
 
     @Override
     public void handleCollision() {
-        if(state) sprite.setTexture(imgOff);
-        if(!state) sprite.setTexture(imgOn);
+        if(state) {
+            sprite.setTexture(imgOff);
+            Resources.getInstance().off.play();
+            Timer.schedule(new Timer.Task() {
+                @Override
+                public void run() {
+                    Resources.getInstance().powerdown.play();
+                }
+            }, 0.1f);
+            Timer.schedule(new Timer.Task() {
+                @Override
+                public void run() {
+                    game.handleWin();
+                }
+            }, 3f);
+        }
+        if(!state) {
+            sprite.setTexture(imgOn);
+            Resources.getInstance().on.play();
+            Resources.getInstance().powerdown.stop();
+        }
         state = !state;
 }
 }

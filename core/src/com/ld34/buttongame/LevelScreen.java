@@ -73,4 +73,7 @@ public class LevelScreen extends ScreenAdapter {
     public void dispose() {
     }
 
+    public void showWinDialog() {
+        Gdx.app.log("TODO", "Show Win Dialogue");
+    }
 }

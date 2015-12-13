@@ -14,7 +14,8 @@ import com.badlogic.gdx.physics.box2d.World;
 
 public class Button extends GameObject{
 
-	public Button(World world, float xPos, float yPos) {
+	public Button(ButtonGame game, World world, float xPos, float yPos) {
+        super(game);
 		Texture img = new Texture(Gdx.files.internal("graphics/ButtonRed.png"));
 		this.sprite = new Sprite(img);
 		this.height = this.sprite.getHeight();

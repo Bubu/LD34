@@ -5,10 +5,15 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.physics.box2d.Body;
 
 public abstract class GameObject {
+    ButtonGame game;
     Sprite sprite;
     Body body;
     public float width;
     public float height;
+
+    public GameObject(ButtonGame game) {
+        this.game = game;
+    }
 
     void draw(SpriteBatch batch){
         sprite.setPosition((body.getPosition().x * Resources.PIXELS_TO_METERS) - sprite.getWidth()/2, (body.getPosition().y * Resources.PIXELS_TO_METERS)- sprite.getHeight()/2);
