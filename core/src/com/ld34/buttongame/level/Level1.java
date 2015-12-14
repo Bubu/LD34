@@ -27,6 +27,7 @@ public class Level1 extends com.ld34.buttongame.level.Level {
         buttonRed = new Button(game, world, Gdx.graphics.getWidth()/2, 100);
         target = new Target(game, world,Gdx.graphics.getWidth()/2,600);
 
+
         objects.add(new Floor(game,world));
         objects.add(target);
         objects.add(buttonRed);

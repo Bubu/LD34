@@ -76,11 +76,5 @@ public abstract class Level {
             }
         });
         objects = new ArrayList<GameObject>();
-        if(Resources.DEBUG){
-            new Obstacle(game, world,0,0,5, Gdx.graphics.getHeight(),0);
-            new Obstacle(game, world,0,Gdx.graphics.getHeight()-5,Gdx.graphics.getWidth(),5,0);
-            new Obstacle(game, world,Gdx.graphics.getWidth()-5,0,5,Gdx.graphics.getHeight(),0);
-            new Obstacle(game, world,0,0,Gdx.graphics.getWidth(), 5,0);
-        }
     }
 }

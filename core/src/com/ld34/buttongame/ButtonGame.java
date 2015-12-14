@@ -51,7 +51,7 @@ public class ButtonGame extends Game {
         prologueScreen = new PrologueScreen(this);
         finalDialogueScreen = new com.ld34.buttongame.gui.FinalDialogueScreen(this);
         
-        currentScreen = finalDialogueScreen;
+        currentScreen = prologueScreen;
     }
 
     public void handleWin() {
