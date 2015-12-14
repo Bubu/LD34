@@ -27,14 +27,16 @@ public class Level2 extends com.ld34.buttongame.level.Level {
     public void init() {
         super.init();
         buttonRed = new Button(game, world, Gdx.graphics.getWidth()/2, 100);
-        target = new Target(game, world, 650,500);
-        Obstacle obstacle = new VerticalObstacle(game,world,100,200,50,250);
-        Obstacle obstacle2 = new HorizontalObstacle(game,world,600,300,250,50);
+        target = new Target(game, world,Gdx.graphics.getWidth()/2,500);
+        Obstacle obstacle = new VerticalObstacle(game,world,100,0,50,350);
+        Obstacle obstacle3 = new VerticalObstacle(game,world,700,0,50,350);
+        Obstacle obstacle2 = new HorizontalObstacle(game,world,275,650,250,50);
 
         objects.add(new Floor(game,world));
         objects.add(target);
         objects.add(obstacle);
         objects.add(obstacle2);
+        objects.add(obstacle3);
         objects.add(buttonRed);
     }
 }

@@ -29,7 +29,7 @@ public class Button extends GameObject {
         FixtureDef fixtureDef = new FixtureDef();
 		fixtureDef.shape = shape;
 		fixtureDef.density = 1f;
-        fixtureDef.friction = 0.2f;
+        fixtureDef.friction = 0.1f;
         fixtureDef.restitution = 0.9f;
 		bodyDef.position.set(xPos/ Resources.PIXELS_TO_METERS, yPos/ Resources.PIXELS_TO_METERS);
 
