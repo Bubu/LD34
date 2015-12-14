@@ -35,4 +35,7 @@ public abstract class GameObject {
 
     public void handleLeave() {
     }
+    
+    public void step() {
+    }
 }
