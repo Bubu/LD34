@@ -14,14 +14,17 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
+import java.util.ArrayList;
+
 public class SelectionScreen extends ScreenAdapter {
     ButtonGame game;
     Stage stage;
+    ArrayList<TextButton> buttonList;
     public SelectionScreen(final ButtonGame game) {
         this.game = game;
         stage = new Stage(new ScreenViewport());
         stage.addListener(Resources.EscListener(game));
-
+        buttonList = new ArrayList<TextButton>();
         Table table = new Table();
         stage.addActor(table);
         table.align(Align.top);
@@ -33,6 +36,7 @@ public class SelectionScreen extends ScreenAdapter {
         int level = game.getLevel();
         for(int i=1; i<=20; i++){
             TextButton button = new TextButton(Integer.toString(i), Resources.Skin());
+            buttonList.add(button);
             final int finalI = i;
             button.addListener(new ChangeListener() {
                 public void changed (ChangeEvent event, Actor actor) {
@@ -54,6 +58,18 @@ public class SelectionScreen extends ScreenAdapter {
     public void show() {
         Gdx.gl.glClearColor(0.7f, 0.3f, 0.9f, 1);
         Gdx.input.setInputProcessor(stage);
+        updateButtons();
+    }
+
+    private void updateButtons() {
+        int i = 1;
+        int level = game.getLevel();
+        for(TextButton button:buttonList){
+            if(i <= level){
+                button.setDisabled(false);
+            }
+            i++;
+        }
     }
 
     @Override

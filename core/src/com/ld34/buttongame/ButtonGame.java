@@ -21,9 +21,9 @@ public class ButtonGame extends Game {
     Level currentLevel;
     private SelectionScreen selectionScreen;
     Preferences prefs;
-	private PrologueScreen dialogueScreen;
 	private PrologueScreen prologueScreen;
 	private FinalDialogueScreen finalDialogueScreen;
+    public boolean buttonOnTheWay = false;
 
     @Override
 	public void create () {
@@ -38,12 +38,12 @@ public class ButtonGame extends Game {
     }
 
     public void quit() {
+        prefs.flush();
         Gdx.app.exit();
     }
 
     public void restart() {
-        start();
-        resumeGame();
+        startLevel(Level.get(this, currentLevel.getNumber()));
     }
 
     void start() {
@@ -60,7 +60,7 @@ public class ButtonGame extends Game {
     public void handleWin() {
         levelScreen.showWinDialog();
         prefs.putInteger("level", getLevel() + 1);
-        currentLevel = currentLevel.getNextLevel();
+        startLevel(currentLevel.getNextLevel());
     }
 
     public int getLevel(){
@@ -69,7 +69,10 @@ public class ButtonGame extends Game {
 
     public void startLevel(Level level) {
         if(level != null) {
+            Gdx.app.log("Debug", "Starting level " + level.getNumber());
+            buttonOnTheWay = false;
             currentLevel = level;
+            currentScreen = levelScreen;
             setScreen(levelScreen);
         }
     }

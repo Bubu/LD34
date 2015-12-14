@@ -23,6 +23,7 @@ public class MenuScreen extends ScreenAdapter {
     TextButton quitbutton;
     TextButton restartbutton;
     private VerticalGroup group;
+    private final TextButton selectButton;
 
     public MenuScreen(final ButtonGame game) {
         this.game = game;
@@ -48,15 +49,22 @@ public class MenuScreen extends ScreenAdapter {
         group.addActor(titel);
         startbutton = new TextButton("Start the game!", Resources.Skin());
         startbutton.addListener(new ChangeListener() {
-            public void changed (ChangeEvent event, Actor actor) {
+            public void changed(ChangeEvent event, Actor actor) {
                 game.resumeGame();
             }
         });
 
-        restartbutton = new TextButton("Restart!", Resources.Skin());
+        restartbutton = new TextButton("Restart Level!", Resources.Skin());
         restartbutton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
                 game.restart();
+            }
+        });
+
+        selectButton = new TextButton("Select Level!", Resources.Skin());
+        selectButton.addListener(new ChangeListener() {
+            public void changed(ChangeEvent event, Actor actor) {
+                game.levelSelect();
             }
         });
 
@@ -67,6 +75,7 @@ public class MenuScreen extends ScreenAdapter {
             }
         });
         group.addActor(startbutton);
+        group.addActor(selectButton);
         group.addActor(quitbutton);
         group.space(20);
         group.padBottom(300);
@@ -79,9 +88,12 @@ public class MenuScreen extends ScreenAdapter {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.input.setInputProcessor(stage);
         if(game.isRunning){
-
+            selectButton.setVisible(true);
             startbutton.setText("Resume");
             group.addActorAt(2,restartbutton);
+        }
+        else{
+            selectButton.setVisible(false);
         }
     }
 

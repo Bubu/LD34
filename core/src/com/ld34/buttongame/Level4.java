@@ -1,17 +1,14 @@
 package com.ld34.buttongame;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Timer;
 
-public class Level1 extends Level{
+public class Level4 extends Level{
 
     private final Target target;
 
-    @Override
-    int getNumber() {
-        return 1;
-    }
-
-    public Level1(ButtonGame game) {
+    public Level4(ButtonGame game) {
         super(game);
         if(Resources.DEBUG){
             new Obstacle(game, world,0,0,5, Gdx.graphics.getHeight(),0);
@@ -21,15 +18,27 @@ public class Level1 extends Level{
         }
         buttonRed = new Button(game, world, Gdx.graphics.getWidth()/2, 100);
         target = new Target(game, world,Gdx.graphics.getWidth()/2,600);
+        final MovingObstacle obstacle2 = new MovingObstacle(game,world,200,500,250,50, new Vector2(2,0));
+        Timer.Task schedule = Timer.schedule(new Timer.Task() {
+            @Override
+            public void run() {
+                obstacle2.turn();
+            }
+        },2.5f,2.5f);
 
         objects.add(new Floor(game,world));
         objects.add(target);
+        objects.add(obstacle2);
         objects.add(buttonRed);
     }
 
     @Override
     Level getNextLevel() {
-        return new Level2(game);
+        return new Level5(game);
     }
 
+    @Override
+    int getNumber() {
+        return 4;
+    }
 }

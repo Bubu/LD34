@@ -46,7 +46,10 @@ public class InputHandler implements InputProcessor {
     	double dist = Math.sqrt(Math.pow(worldCoords.x - game.currentLevel.buttonRed.getCenterX(),2.0) + Math.pow(worldCoords.y - game.currentLevel.buttonRed.getCenterY(), 2.0));
     	if(buttonPressed) {
         	if(dist>game.currentLevel.buttonRed.height) {
-        		game.currentLevel.buttonRed.startMove((float)((game.currentLevel.buttonRed.getCenterX() - worldCoords.x)/dist * 10), (float)((game.currentLevel.buttonRed.getCenterY() - worldCoords.y )/dist * 10));
+        		if(!game.buttonOnTheWay) {
+                    game.buttonOnTheWay = true;
+                    game.currentLevel.buttonRed.startMove((float) ((game.currentLevel.buttonRed.getCenterX() - worldCoords.x) / dist * 10), (float) ((game.currentLevel.buttonRed.getCenterY() - worldCoords.y) / dist * 10));
+                }
         		buttonPressed = false;
         	}
     	}
