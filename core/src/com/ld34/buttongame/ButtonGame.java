@@ -21,7 +21,8 @@ public class ButtonGame extends Game {
     Level currentLevel;
     private SelectionScreen selectionScreen;
     Preferences prefs;
-	private DialogueScreen dialogueScreen;
+	private PrologueScreen prologueScreen;
+	private FinalDialogueScreen finalDialogueScreen;
     public boolean buttonOnTheWay = false;
 
     @Override
@@ -50,8 +51,10 @@ public class ButtonGame extends Game {
         currentLevel = new Level1(this);
         levelScreen = new LevelScreen(this);
         selectionScreen = new SelectionScreen(this);
-        dialogueScreen = new DialogueScreen(this);
-        currentScreen = dialogueScreen;
+        prologueScreen = new PrologueScreen(this);
+        finalDialogueScreen = new FinalDialogueScreen(this);
+        
+        currentScreen = finalDialogueScreen;
     }
 
     public void handleWin() {

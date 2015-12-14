@@ -26,10 +26,16 @@ public final class Resources {
     final static boolean DEBUG = false;
     private static Resources instance = null;
     
-    final String[] Epilogue;
-    final Color[] EpilogueColor;
-    final int[] EpilogueAlign;
-    final int dialogueLength = 8;
+    final String[] prologue;
+    final Color[] prologueColor;
+    final int[] prologueAlign;
+    final int prologueLength = 8;
+    
+    final String[] finalDialogue;
+    final Color[] finalDialogueColor;
+    final int[] finalDialogueAlign;
+    final int finalDialogueLength = 8;
+    
 
     public static Resources getInstance() {
         if(instance == null) {
@@ -50,46 +56,89 @@ public final class Resources {
         off = Gdx.audio.newSound(Gdx.files.internal("sounds/switch_off.wav"));
         powerdown = Gdx.audio.newSound(Gdx.files.internal("sounds/powerdown_full.wav"));
         
-        Epilogue = new String[dialogueLength];
-        EpilogueColor = new Color[dialogueLength];
-        EpilogueAlign = new int[dialogueLength];
+        prologue = new String[prologueLength];
+        prologueColor = new Color[prologueLength];
+        prologueAlign = new int[prologueLength];
         
-        EpilogueColor[0] = Color.WHITE;
-        Epilogue[0] = "TOCK, TOCK ...";
-        EpilogueAlign[0] = Align.center;
+        prologueColor[0] = Color.WHITE;
+        prologue[0] = "TOCK, TOCK ...";
+        prologueAlign[0] = Align.center;
         
-        EpilogueColor[1] = Color.RED;
-        Epilogue[1] = "Jimmy: Who is that?";
-        EpilogueAlign[1] = Align.right;
+        prologueColor[1] = Color.RED;
+        prologue[1] = "Jimmy: Who is that?";
+        prologueAlign[1] = Align.right;
         
-        EpilogueColor[2] = Color.YELLOW;
-        Epilogue[2] = "Prof Zipper: Jimmy Two-Button, the legendary button sniper!" +
+        prologueColor[2] = Color.YELLOW;
+        prologue[2] = "Prof Zipper: Jimmy Two-Button, the legendary button sniper!" +
         		" ..., I knew, I would find you here ...";      
-        EpilogueAlign[2] = Align.left;
+        prologueAlign[2] = Align.left;
         
-        EpilogueColor[3] = Color.RED;
-        Epilogue[3] = "Jimmy: In my appartement?";
-        EpilogueAlign[3] = Align.right;
+        prologueColor[3] = Color.RED;
+        prologue[3] = "Jimmy: In my appartement?";
+        prologueAlign[3] = Align.right;
         
-        EpilogueColor[4] = Color.YELLOW;
-        Epilogue[4] = "Prof Zipper: You must help us! Captain Calamari broke into my laboratory" +
+        prologueColor[4] = Color.YELLOW;
+        prologue[4] = "Prof Zipper: You must help us! Captain Calamari broke into my laboratory" +
         		" and stole my new mutation elixir. If he figures out how to use it ...";
-        EpilogueAlign[4] = Align.left;
+        prologueAlign[4] = Align.left;
         
-        EpilogueColor[5] = Color.RED;
-        Epilogue[5] = "Jimmy: Wait, ... I know you! You are Professor Zipper!";
-        EpilogueAlign[5] = Align.right;
+        prologueColor[5] = Color.RED;
+        prologue[5] = "Jimmy: Wait, ... I know you! You are Professor Zipper!";
+        prologueAlign[5] = Align.right;
         
-        EpilogueColor[6] = Color.YELLOW;
-        Epilogue[6] = "Prof. Zipper: Junior-Professor..., but yes! Please, he took the elixir to his secret base" +
+        prologueColor[6] = Color.YELLOW;
+        prologue[6] = "Prof. Zipper: Junior-Professor..., but yes! Please, he took the elixir to his secret base" +
         		" under the city harbor, quayside 23. \n Only a master button sniper could enter his hideout" +
         		" and survive.";
-        EpilogueAlign[6] = Align.left;
+        prologueAlign[6] = Align.left;
         
-        EpilogueColor[7] = Color.RED;
-        Epilogue[7] = "Jimmy: Don't worry. I'm on it!";
-        EpilogueAlign[7] = Align.right;
+        prologueColor[7] = Color.RED;
+        prologue[7] = "Jimmy: Don't worry. I'm on it!";
+        prologueAlign[7] = Align.right;
+        
+        // Final Dialogue!
+        
+        finalDialogue = new String[finalDialogueLength];
+        finalDialogueColor = new Color[finalDialogueLength];
+        finalDialogueAlign = new int[finalDialogueLength];
+        
+        finalDialogueColor[0] = Color.CYAN;
+        finalDialogue[0] = "BLAST! ...";
+        finalDialogueAlign[0] = Align.center;
+        
+        finalDialogueColor[1] = Color.RED;
+        finalDialogue[1] = "Jimmy: That can't be good.";
+        finalDialogueAlign[1] = Align.right;
+        
+        finalDialogueColor[2] = Color.CYAN;
+        finalDialogue[2] = "Captain Calamari: Who dares to intrude into my secret hideout? I will" +
+        		" devour your bones! Arrr!";      
+        finalDialogueAlign[2] = Align.left;
+        
+        finalDialogueColor[3] = Color.RED;
+        finalDialogue[3] = "Jimmy: My bones?";
+        finalDialogueAlign[3] = Align.right;
+        
+        finalDialogueColor[4] = Color.CYAN;
+        finalDialogue[4] = "Captain Calamari: Jimmy Two-Button! Of course! Who else would be so brashly stupid to come" +
+        		" into my lair with nothing more than two rotting buttons!";
+        finalDialogueAlign[4] = Align.left;
+        
+        finalDialogueColor[5] = Color.RED;
+        finalDialogue[5] = "Jimmy: Yeah ... ";
+        finalDialogueAlign[5] = Align.right;
+        
+        finalDialogueColor[6] = Color.CYAN;
+        finalDialogue[6] = "Captain Calamari: Once I mutate all my aquatic allies, noone can stop me from" +
+        		" taking over the world. Arrr!";
+        finalDialogueAlign[6] = Align.left;
+        
+        finalDialogueColor[7] = Color.RED;
+        finalDialogue[7] = "Jimmy: We'll see about that, Captain!";
+        finalDialogueAlign[7] = Align.right;
     }
+    
+    
 
     public static Skin Skin(){
         return getInstance().skin;

@@ -22,16 +22,16 @@ import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
-public class DialogueScreen extends ScreenAdapter {
+public class FinalDialogueScreen extends ScreenAdapter {
 	ButtonGame game;
 	Stage stage;
 	int count = 0;
-	int maxCount = Resources.getInstance().dialogueLength;
+	int maxCount = Resources.getInstance().prologueLength;
 	Label dialogueLabel;
 	Image leftPerson;
 	Image rightPerson;
 
-	public DialogueScreen(final ButtonGame game) {
+	public FinalDialogueScreen(final ButtonGame game) {
 	        this.game = game;
 	        stage = new Stage(new ScreenViewport());
 	        
@@ -39,10 +39,11 @@ public class DialogueScreen extends ScreenAdapter {
 	        dialogueLabel.setWrap(true);
 	        dialogueLabel.setColor(Color.CYAN);
 	        
-	        leftPerson = new Image(new Texture(Gdx.files.internal("graphics/ProfZipper.png")));
+	        leftPerson = new Image(new Texture(Gdx.files.internal("graphics/CaptainCalamari.png")));
 	        leftPerson.setVisible(false);
 	        rightPerson = new Image(new Texture(Gdx.files.internal("graphics/JimmyTwoButton.png")));
-	        
+	        leftPerson.setScaling(Scaling.none);
+	        rightPerson.setScaling(Scaling.none);
 	        stage.addListener(new InputListener() {
 	            @Override
 	            public boolean touchDown(InputEvent event, float screenX, float screenY, int pointer, int button) {
@@ -62,13 +63,13 @@ public class DialogueScreen extends ScreenAdapter {
 	        table.add().height(50).colspan(3).center();
 	        table.row();
 	        table.add(leftPerson);
-	        table.add().width(20);
+	        table.add();//.width(20);
 	        table.add(rightPerson);
 	        table.row();
-	        table.add().height(50);
+	        table.add().colspan(3).height(50);
 	        table.row();
 	        table.add(dialogueLabel).width(600).colspan(3).center();
-	        if(Resources.DEBUG)table.setDebug(true);
+	        table.setDebug(true);
 	        
 	        stage.addActor(table);
 	    }
@@ -80,9 +81,9 @@ public class DialogueScreen extends ScreenAdapter {
 	    }
 	    
 	    public int advanceDialogue(int currCount) {
-	    	dialogueLabel.setText(Resources.getInstance().Epilogue[currCount]);
-	    	dialogueLabel.setColor(Resources.getInstance().EpilogueColor[currCount]);
-    		dialogueLabel.setAlignment(Resources.getInstance().EpilogueAlign[currCount]);
+	    	dialogueLabel.setText(Resources.getInstance().finalDialogue[currCount]);
+	    	dialogueLabel.setColor(Resources.getInstance().finalDialogueColor[currCount]);
+    		dialogueLabel.setAlignment(Resources.getInstance().finalDialogueAlign[currCount]);
 	    	if(currCount == 2){
 	    		leftPerson.setVisible(true);
 	    	}
