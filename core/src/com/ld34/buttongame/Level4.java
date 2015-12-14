@@ -18,13 +18,14 @@ public class Level4 extends Level{
         }
         buttonRed = new Button(game, world, Gdx.graphics.getWidth()/2, 100);
         target = new Target(game, world,Gdx.graphics.getWidth()/2,600);
-        final MovingObstacle obstacle2 = new MovingObstacle(game,world,200,500,250,50, new Vector2(2,0));
-        Timer.Task schedule = Timer.schedule(new Timer.Task() {
+        final MovingObstacle obstacle2 = new MovingObstacle(game,world,200,500,250,50, new Vector2(4,0));
+
+        Timer.schedule(new Timer.Task() {
             @Override
             public void run() {
                 obstacle2.turn();
             }
-        },2.5f,2.5f);
+        },1f,1f);
 
         objects.add(new Floor(game,world));
         objects.add(target);
