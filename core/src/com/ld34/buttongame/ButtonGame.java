@@ -37,6 +37,7 @@ public class ButtonGame extends Game {
     }
 
     public void quit() {
+        prefs.flush();
         Gdx.app.exit();
     }
 
@@ -56,7 +57,7 @@ public class ButtonGame extends Game {
     public void handleWin() {
         levelScreen.showWinDialog();
         prefs.putInteger("level", getLevel() + 1);
-        currentLevel = currentLevel.getNextLevel();
+        startLevel(currentLevel.getNextLevel());
     }
 
     public int getLevel(){
