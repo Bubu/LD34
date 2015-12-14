@@ -1,18 +1,16 @@
-package com.ld34.buttongame;
+package com.ld34.buttongame.objects;
 
-import com.badlogic.gdx.Audio;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
+import com.ld34.buttongame.ButtonGame;
+import com.ld34.buttongame.Resources;
 
-public class Button extends GameObject{
+public class Button extends GameObject {
 
 	public Button(ButtonGame game, World world, float xPos, float yPos) {
         super(game);
@@ -40,12 +38,12 @@ public class Button extends GameObject{
         super.init();
 	}
 	
-	double getCenterX()
+	public double getCenterX()
 	{
 		return body.getPosition().x * Resources.PIXELS_TO_METERS;
 	}
 
-    double getCenterY()
+    public double getCenterY()
 	{
 		return body.getPosition().y * Resources.PIXELS_TO_METERS;
 	}

@@ -1,28 +1,28 @@
-package com.ld34.buttongame;
+package com.ld34.buttongame.gui;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Cursor;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.utils.Timer;
-
-import java.util.ArrayList;
+import com.ld34.buttongame.ButtonGame;
+import com.ld34.buttongame.InputHandler;
+import com.ld34.buttongame.Resources;
+import com.ld34.buttongame.objects.GameObject;
 
 public class LevelScreen extends ScreenAdapter {
     private final SpriteBatch batch;
-    final Sprite buttonBlue;
+    public final Sprite buttonBlue;
     ButtonGame game;
     InputHandler inputHandler;
-    OrthographicCamera camera;
+    public OrthographicCamera camera;
     Box2DDebugRenderer debugRenderer;
     Matrix4 debugMatrix;
     Cursor customCursor;

@@ -1,4 +1,4 @@
-package com.ld34.buttongame;
+package com.ld34.buttongame.level;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
@@ -7,19 +7,22 @@ import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.World;
+import com.ld34.buttongame.ButtonGame;
+import com.ld34.buttongame.objects.Button;
+import com.ld34.buttongame.objects.GameObject;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 
 public abstract class Level {
-    ArrayList<GameObject> objects;
-    final World world;
-    Button buttonRed;
+    public ArrayList<GameObject> objects;
+    public final World world;
+    public Button buttonRed;
     public ButtonGame game;
 
     public static Level get(ButtonGame game, int i){
         try {
-            Class c = Class.forName("com.ld34.buttongame.Level" + Integer.toString(i));
+            Class c = Class.forName("com.ld34.buttongame.level.Level" + Integer.toString(i));
             Class[] types = {game.getClass()};
             Constructor constructor = c.getConstructor(types);
             Object[] parameters = {game};
@@ -47,7 +50,10 @@ public abstract class Level {
 
             @Override
             public void endContact(Contact contact) {
-
+                GameObject objectA = (GameObject) contact.getFixtureA().getBody().getUserData();
+                GameObject objectB = (GameObject) contact.getFixtureB().getBody().getUserData();
+                objectA.handleLeave();
+                objectB.handleLeave();
             }
 
             @Override
@@ -62,7 +68,7 @@ public abstract class Level {
         });
     }
 
-    abstract Level getNextLevel();
+    public abstract Level getNextLevel();
 
-    abstract int getNumber();
+    public abstract int getNumber();
 }

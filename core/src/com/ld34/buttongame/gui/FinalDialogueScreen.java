@@ -1,4 +1,4 @@
-package com.ld34.buttongame;
+package com.ld34.buttongame.gui;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -21,8 +21,10 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener.ChangeEvent;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.ld34.buttongame.ButtonGame;
+import com.ld34.buttongame.Resources;
 
-public class PrologueScreen extends ScreenAdapter {
+public class FinalDialogueScreen extends ScreenAdapter {
 	ButtonGame game;
 	Stage stage;
 	int count = 0;
@@ -31,7 +33,7 @@ public class PrologueScreen extends ScreenAdapter {
 	Image leftPerson;
 	Image rightPerson;
 
-	public PrologueScreen(final ButtonGame game) {
+	public FinalDialogueScreen(final ButtonGame game) {
 	        this.game = game;
 	        stage = new Stage(new ScreenViewport());
 	        
@@ -39,10 +41,11 @@ public class PrologueScreen extends ScreenAdapter {
 	        dialogueLabel.setWrap(true);
 	        dialogueLabel.setColor(Color.CYAN);
 	        
-	        leftPerson = new Image(new Texture(Gdx.files.internal("graphics/ProfZipper.png")));
+	        leftPerson = new Image(new Texture(Gdx.files.internal("graphics/CaptainCalamari.png")));
 	        leftPerson.setVisible(false);
 	        rightPerson = new Image(new Texture(Gdx.files.internal("graphics/JimmyTwoButton.png")));
-	        
+	        leftPerson.setScaling(Scaling.none);
+	        rightPerson.setScaling(Scaling.none);
 	        stage.addListener(new InputListener() {
 	            @Override
 	            public boolean touchDown(InputEvent event, float screenX, float screenY, int pointer, int button) {
@@ -62,13 +65,15 @@ public class PrologueScreen extends ScreenAdapter {
 	        table.add().height(50).colspan(3).center();
 	        table.row();
 	        table.add(leftPerson);
-	        table.add().width(20);
+	        table.add();//.width(20);
 	        table.add(rightPerson);
 	        table.row();
-	        table.add().height(50);
+	        table.add().colspan(3).height(50);
 	        table.row();
 	        table.add(dialogueLabel).width(600).colspan(3).center();
-	        table.setDebug(true);
+	        if(Resources.DEBUG) {
+				table.setDebug(true);
+			}
 	        
 	        stage.addActor(table);
 	    }
@@ -80,9 +85,9 @@ public class PrologueScreen extends ScreenAdapter {
 	    }
 	    
 	    public int advanceDialogue(int currCount) {
-	    	dialogueLabel.setText(Resources.getInstance().prologue[currCount]);
-	    	dialogueLabel.setColor(Resources.getInstance().prologueColor[currCount]);
-    		dialogueLabel.setAlignment(Resources.getInstance().prologueAlign[currCount]);
+	    	dialogueLabel.setText(Resources.getInstance().finalDialogue[currCount]);
+	    	dialogueLabel.setColor(Resources.getInstance().finalDialogueColor[currCount]);
+    		dialogueLabel.setAlignment(Resources.getInstance().finalDialogueAlign[currCount]);
 	    	if(currCount == 2){
 	    		leftPerson.setVisible(true);
 	    	}

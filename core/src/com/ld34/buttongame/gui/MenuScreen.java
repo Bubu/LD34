@@ -1,4 +1,4 @@
-package com.ld34.buttongame;
+package com.ld34.buttongame.gui;
 
 
 import com.badlogic.gdx.Gdx;
@@ -15,6 +15,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.VerticalGroup;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.ld34.buttongame.ButtonGame;
+import com.ld34.buttongame.Resources;
 
 public class MenuScreen extends ScreenAdapter {
     ButtonGame game;

@@ -1,8 +1,13 @@
-package com.ld34.buttongame;
+package com.ld34.buttongame.level;
 
 import com.badlogic.gdx.Gdx;
+import com.ld34.buttongame.*;
+import com.ld34.buttongame.objects.Button;
+import com.ld34.buttongame.objects.Floor;
+import com.ld34.buttongame.objects.Obstacle;
+import com.ld34.buttongame.objects.Target;
 
-public class Level5 extends Level{
+public class Level5 extends com.ld34.buttongame.level.Level {
 
     private final Target target;
 
@@ -29,12 +34,12 @@ public class Level5 extends Level{
     }
 
     @Override
-    Level getNextLevel() {
+    public com.ld34.buttongame.level.Level getNextLevel() {
         return new Level4(game);
     }
 
     @Override
-    int getNumber() {
+    public int getNumber() {
         return 5;
     }
 }

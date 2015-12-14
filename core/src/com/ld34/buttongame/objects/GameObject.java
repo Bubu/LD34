@@ -1,13 +1,15 @@
-package com.ld34.buttongame;
+package com.ld34.buttongame.objects;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.physics.box2d.Body;
+import com.ld34.buttongame.ButtonGame;
+import com.ld34.buttongame.Resources;
 
 public abstract class GameObject {
     ButtonGame game;
-    Sprite sprite;
-    Body body;
+    protected Sprite sprite;
+    protected Body body;
     public float width;
     public float height;
 
@@ -15,7 +17,7 @@ public abstract class GameObject {
         this.game = game;
     }
 
-    void draw(SpriteBatch batch){
+    public void draw(SpriteBatch batch){
         sprite.setPosition((body.getPosition().x * Resources.PIXELS_TO_METERS) - sprite.getWidth()/2, (body.getPosition().y * Resources.PIXELS_TO_METERS)- sprite.getHeight()/2);
         sprite.setRotation((float)Math.toDegrees(body.getAngle()));
         batch.draw(sprite, sprite.getX(), sprite.getY(),sprite.getOriginX(),
@@ -29,5 +31,8 @@ public abstract class GameObject {
     }
 
     public void handleCollision(){
+    }
+
+    public void handleLeave() {
     }
 }

@@ -1,8 +1,9 @@
-package com.ld34.buttongame;
+package com.ld34.buttongame.objects;
 
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.World;
+import com.ld34.buttongame.ButtonGame;
 
 public class MovingObstacle extends Obstacle {
     public MovingObstacle(ButtonGame game, World world, float xPos, float yPos, float sizeX, float sizeY, Vector2 dir) {

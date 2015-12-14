@@ -1,13 +1,14 @@
-package com.ld34.buttongame;
+package com.ld34.buttongame.objects;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Timer;
+import com.ld34.buttongame.ButtonGame;
+import com.ld34.buttongame.Resources;
 
 public class Floor extends GameObject {
     public Floor(ButtonGame game, World world) {
@@ -31,6 +32,16 @@ public class Floor extends GameObject {
         body = world.createBody(bodyDef);
         body.createFixture(fixtureDef);
         super.init();
+    }
+
+    @Override
+    public void handleLeave() {
+        Timer.schedule(new Timer.Task() {
+            @Override
+            public void run() {
+                Gdx.app.log("Todo","Display restart message");
+            }
+        },1);
     }
 
     @Override

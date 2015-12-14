@@ -12,28 +12,28 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Align;
 
 public final class Resources {
-    final Sound clack;
-    final Sound click;
-    final Sound on;
-    final Sound off;
-    final Sound powerdown;
-    final Texture cursor;
+    public final Sound clack;
+    public final Sound click;
+    public final Sound on;
+    public final Sound off;
+    public final Sound powerdown;
+    public final Texture cursor;
     final Texture cursorPressed;
-    final Texture floor;
+    public final Texture floor;
     private Skin skin;
 
-    final static float PIXELS_TO_METERS = 100f;
-    final static boolean DEBUG = false;
+    public final static float PIXELS_TO_METERS = 100f;
+    public final static boolean DEBUG = false;
     private static Resources instance = null;
     
-    final String[] prologue;
-    final Color[] prologueColor;
-    final int[] prologueAlign;
-    final int prologueLength = 8;
+    public final String[] prologue;
+    public final Color[] prologueColor;
+    public final int[] prologueAlign;
+    public final int prologueLength = 8;
     
-    final String[] finalDialogue;
-    final Color[] finalDialogueColor;
-    final int[] finalDialogueAlign;
+    public final String[] finalDialogue;
+    public final Color[] finalDialogueColor;
+    public final int[] finalDialogueAlign;
     final int finalDialogueLength = 8;
     
 

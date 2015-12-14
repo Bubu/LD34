@@ -1,28 +1,24 @@
 package com.ld34.buttongame;
 
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Cursor;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
-import java.util.LinkedList;
+import com.ld34.buttongame.gui.LevelScreen;
+import com.ld34.buttongame.gui.MenuScreen;
+import com.ld34.buttongame.gui.PrologueScreen;
+import com.ld34.buttongame.gui.SelectionScreen;
 
 public class ButtonGame extends Game {
-    MenuScreen menuScreen;
-    LevelScreen levelScreen;
+    com.ld34.buttongame.gui.MenuScreen menuScreen;
+    com.ld34.buttongame.gui.LevelScreen levelScreen;
     public boolean isRunning;
     private Screen currentScreen;
-    Level currentLevel;
-    private SelectionScreen selectionScreen;
+    public com.ld34.buttongame.level.Level currentLevel;
+    private com.ld34.buttongame.gui.SelectionScreen selectionScreen;
     Preferences prefs;
-	private PrologueScreen prologueScreen;
-	private FinalDialogueScreen finalDialogueScreen;
+	private com.ld34.buttongame.gui.PrologueScreen prologueScreen;
+	private com.ld34.buttongame.gui.FinalDialogueScreen finalDialogueScreen;
     public boolean buttonOnTheWay = false;
 
     @Override
@@ -43,16 +39,16 @@ public class ButtonGame extends Game {
     }
 
     public void restart() {
-        startLevel(Level.get(this, currentLevel.getNumber()));
+        startLevel(com.ld34.buttongame.level.Level.get(this, currentLevel.getNumber()));
     }
 
     void start() {
         isRunning = true;
-        currentLevel = new Level1(this);
+        currentLevel = new com.ld34.buttongame.level.Level1(this);
         levelScreen = new LevelScreen(this);
         selectionScreen = new SelectionScreen(this);
         prologueScreen = new PrologueScreen(this);
-        finalDialogueScreen = new FinalDialogueScreen(this);
+        finalDialogueScreen = new com.ld34.buttongame.gui.FinalDialogueScreen(this);
         
         currentScreen = finalDialogueScreen;
     }
@@ -67,7 +63,7 @@ public class ButtonGame extends Game {
         return prefs.getInteger("level",1);
     }
 
-    public void startLevel(Level level) {
+    public void startLevel(com.ld34.buttongame.level.Level level) {
         if(level != null) {
             Gdx.app.log("Debug", "Starting level " + level.getNumber());
             buttonOnTheWay = false;
