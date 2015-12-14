@@ -65,7 +65,7 @@ public class SelectionScreen extends ScreenAdapter {
         int i = 1;
         int level = game.getLevel();
         for(TextButton button:buttonList){
-            if(i <= level){
+            if(i <= level || Resources.DEBUG){
                 button.setDisabled(false);
             }
             i++;

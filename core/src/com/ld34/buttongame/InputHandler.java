@@ -35,7 +35,7 @@ public class InputHandler implements InputProcessor {
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
         Vector3 worldCoords = game.levelScreen.camera.unproject(new Vector3(screenX, screenY,0));
-        if(worldCoords.y <=150) {
+        if(worldCoords.y <=150 || Resources.DEBUG) {
             double dist = Math.sqrt(Math.pow(worldCoords.x - game.currentLevel.buttonRed.getCenterX(), 2.0) + Math.pow(worldCoords.y - game.currentLevel.buttonRed.getCenterY(), 2.0));
             if (dist < game.currentLevel.buttonRed.height) {
                 buttonPressed = true;

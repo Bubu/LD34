@@ -25,27 +25,22 @@ public class Level4 extends com.ld34.buttongame.level.Level {
     }
 
     @Override
-    public int getNumber() {
-        return 4;
-    }
-
-    @Override
     public void init() {
         super.init();
         buttonRed = new Button(game, world, Gdx.graphics.getWidth()/2, 100);
         target = new Target(game, world,Gdx.graphics.getWidth()/2,600);
-        final MovingObstacle obstacle2 = new MovingObstacle(game,world,200,500,250,50, new Vector2(4,0));
+        final MovingObstacle obstacle = new MovingObstacle(game,world,200,500,250,50, new Vector2(4,0));
 
         Timer.schedule(new Timer.Task() {
             @Override
             public void run() {
-                obstacle2.turn();
+                obstacle.turn();
             }
         },1f,1f);
 
         objects.add(new Floor(game,world));
         objects.add(target);
-        objects.add(obstacle2);
+        objects.add(obstacle);
         objects.add(buttonRed);
     }
 }

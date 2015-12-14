@@ -7,6 +7,7 @@ import com.ld34.buttongame.objects.Button;
 import com.ld34.buttongame.objects.Floor;
 import com.ld34.buttongame.objects.Obstacle;
 import com.ld34.buttongame.objects.Target;
+import com.ld34.buttongame.objects.VerticalObstacle;
 
 public class Level5 extends com.ld34.buttongame.level.Level {
 
@@ -22,16 +23,11 @@ public class Level5 extends com.ld34.buttongame.level.Level {
     }
 
     @Override
-    public int getNumber() {
-        return 5;
-    }
-
-    @Override
     public void init() {
         super.init();
         buttonRed = new Button(game, world, Gdx.graphics.getWidth()/2, 100);
         target = new Target(game, world,Gdx.graphics.getWidth()/2,500);
-        Obstacle obstacle = new Obstacle(game,world,100,200,50,350,1);
+        Obstacle obstacle = new VerticalObstacle(game,world,100,200,50,350);
         //Obstacle obstacle3 = new Obstacle(game,world,700,200,50,350,1);
         //Obstacle obstacle2 = new Obstacle(game,world,400,700,250,50,2);
         Attractor attractor = new Attractor(game, world, 300, 500, 0.1f);

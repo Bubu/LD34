@@ -13,11 +13,6 @@ public class Level1 extends com.ld34.buttongame.level.Level {
 
     private Target target;
 
-    @Override
-    public int getNumber() {
-        return 1;
-    }
-
     public Level1(ButtonGame game) {
         super(game);
     }
@@ -33,8 +28,6 @@ public class Level1 extends com.ld34.buttongame.level.Level {
         buttonRed = new Button(game, world, Gdx.graphics.getWidth()/2, 100);
         target = new Target(game, world,Gdx.graphics.getWidth()/2,600);
         Laser laser = new Laser(game, 0, 300, 0f);
-        
-        
         objects.add(new Floor(game,world));
         objects.add(target);
         objects.add(buttonRed);

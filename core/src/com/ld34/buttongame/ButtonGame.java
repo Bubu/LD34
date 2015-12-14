@@ -21,6 +21,7 @@ public class ButtonGame extends Game {
 	private com.ld34.buttongame.gui.PrologueScreen prologueScreen;
 	private com.ld34.buttongame.gui.FinalDialogueScreen finalDialogueScreen;
     public boolean buttonOnTheWay = false;
+    public boolean isWinning;
 
     @Override
 	public void create () {
@@ -35,12 +36,11 @@ public class ButtonGame extends Game {
     }
 
     public void quit() {
-        prefs.flush();
         Gdx.app.exit();
     }
 
     public void restart() {
-        startLevel(com.ld34.buttongame.level.Level.get(this, currentLevel.getNumber()));
+        startLevel(currentLevel);
     }
 
     void start() {
@@ -51,12 +51,13 @@ public class ButtonGame extends Game {
         prologueScreen = new PrologueScreen(this);
         finalDialogueScreen = new com.ld34.buttongame.gui.FinalDialogueScreen(this);
         
-        currentScreen = finalDialogueScreen;
+        currentScreen = prologueScreen;
     }
 
     public void handleWin() {
         levelScreen.showWinDialog();
         prefs.putInteger("level", getLevel() + 1);
+        prefs.flush();
         startLevel(currentLevel.getNextLevel());
     }
 
@@ -66,11 +67,11 @@ public class ButtonGame extends Game {
 
     public void startLevel(com.ld34.buttongame.level.Level level) {
         if(level != null) {
-            Gdx.app.log("Debug", "Starting level " + level.getNumber());
             Timer.instance().clear();
             Resources.getInstance().powerdown.stop();
             levelScreen.restart.setVisible(false);
             buttonOnTheWay = false;
+            isWinning = false;
             currentLevel = level;
             currentLevel.init();
             currentScreen = levelScreen;
