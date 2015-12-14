@@ -32,6 +32,13 @@ public class Obstacle extends GameObject{
             this.width = this.sprite.getWidth();
             shape.setAsBox(width/2/ Resources.PIXELS_TO_METERS,height/2/ Resources.PIXELS_TO_METERS);
         }
+        else if(type == 3) {
+            sprite = new Sprite(new Texture(Gdx.files.internal("graphics/moving.png")));
+            sprite.setSize(sizeX,sizeY);
+            this.height = this.sprite.getHeight();
+            this.width = this.sprite.getWidth();
+            shape.setAsBox(width/2/ Resources.PIXELS_TO_METERS,height/2/ Resources.PIXELS_TO_METERS);
+        }
 
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = shape;

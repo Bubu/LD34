@@ -68,7 +68,7 @@ public class DialogueScreen extends ScreenAdapter {
 	        table.add().height(50);
 	        table.row();
 	        table.add(dialogueLabel).width(600).colspan(3).center();
-	        table.setDebug(true);
+	        if(Resources.DEBUG)table.setDebug(true);
 	        
 	        stage.addActor(table);
 	    }

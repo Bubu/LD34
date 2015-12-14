@@ -22,6 +22,7 @@ public class ButtonGame extends Game {
     private SelectionScreen selectionScreen;
     Preferences prefs;
 	private DialogueScreen dialogueScreen;
+    public boolean buttonOnTheWay = false;
 
     @Override
 	public void create () {
@@ -64,6 +65,8 @@ public class ButtonGame extends Game {
 
     public void startLevel(Level level) {
         if(level != null) {
+            Gdx.app.log("Debug", "Starting level " + level.getNumber());
+            buttonOnTheWay = false;
             currentLevel = level;
             currentScreen = levelScreen;
             setScreen(levelScreen);
