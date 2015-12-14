@@ -52,7 +52,7 @@ public class InputHandler implements InputProcessor {
     	if(buttonPressed) {
         	if(dist>game.currentLevel.buttonRed.height) {
         		//if(!game.buttonOnTheWay) {
-                //    game.buttonOnTheWay = true;
+                    game.buttonOnTheWay = true;
                     game.currentLevel.buttonRed.startMove((float) ((game.currentLevel.buttonRed.getCenterX() - worldCoords.x) / dist * 10), (float) ((game.currentLevel.buttonRed.getCenterY() - worldCoords.y) / dist * 10));
                 //}
         		buttonPressed = false;
