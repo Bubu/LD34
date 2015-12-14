@@ -43,6 +43,9 @@ public class LevelScreen extends ScreenAdapter {
     public void render(float delta) {
         camera.update();
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        
+        
+        
         game.currentLevel.world.step(1f / 60f, 8, 3);
         batch.setProjectionMatrix(camera.combined);
         debugMatrix = batch.getProjectionMatrix().cpy().scale(Resources.PIXELS_TO_METERS,
