@@ -28,7 +28,7 @@ public class Target extends GameObject {
         bodyDef.type = BodyDef.BodyType.StaticBody;
 
         PolygonShape shape = new PolygonShape();
-        shape.setAsBox(width/2/ Resources.PIXELS_TO_METERS,height/2/ Resources.PIXELS_TO_METERS);
+        shape.setAsBox((width-5)/2/ Resources.PIXELS_TO_METERS,height/2/ Resources.PIXELS_TO_METERS);
 
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = shape;
@@ -58,11 +58,13 @@ public class Target extends GameObject {
                 }
             };
             Timer.schedule(winTask, 3f);
+            game.isWinning = true;
         }
         if(!state) {
             sprite.setTexture(imgOn);
             Resources.getInstance().on.play();
             Resources.getInstance().powerdown.stop();
+            game.isWinning = false;
             winTask.cancel();
         }
         state = !state;

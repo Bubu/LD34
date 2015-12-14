@@ -12,11 +12,6 @@ public class Level1 extends com.ld34.buttongame.level.Level {
 
     private Target target;
 
-    @Override
-    public int getNumber() {
-        return 1;
-    }
-
     public Level1(ButtonGame game) {
         super(game);
     }

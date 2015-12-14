@@ -59,7 +59,7 @@ public class LevelScreen extends ScreenAdapter {
         Vector3 worldCoords = camera.unproject(new Vector3(Gdx.input.getX(),Gdx.input.getY(), 0));
         buttonBlue.setCenter(worldCoords.x, worldCoords.y);
         buttonBlue.draw(batch);
-        if(restart.isVisible()) {
+        if(restart.isVisible() && !game.isWinning) {
             restart.draw(batch, 1);
         }
         batch.end();

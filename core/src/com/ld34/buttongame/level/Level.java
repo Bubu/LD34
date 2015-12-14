@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public abstract class Level {
     public ArrayList<GameObject> objects;
-    public final World world;
+    public World world;
     public Button buttonRed;
     public ButtonGame game;
 
@@ -41,6 +41,11 @@ public abstract class Level {
 
     public Level(ButtonGame game) {
         this.game = game;
+    }
+
+    public abstract Level getNextLevel();
+
+    public void init(){
         world = new World(new Vector2(0, 0f), true);
         world.setContactListener(new ContactListener() {
 
@@ -70,13 +75,6 @@ public abstract class Level {
 
             }
         });
-    }
-
-    public abstract Level getNextLevel();
-
-    public abstract int getNumber();
-
-    public void init(){
         objects = new ArrayList<GameObject>();
         if(Resources.DEBUG){
             new Obstacle(game, world,0,0,5, Gdx.graphics.getHeight(),0);

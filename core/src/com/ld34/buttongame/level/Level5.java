@@ -21,11 +21,6 @@ public class Level5 extends com.ld34.buttongame.level.Level {
     }
 
     @Override
-    public int getNumber() {
-        return 5;
-    }
-
-    @Override
     public void init() {
         super.init();
         buttonRed = new Button(game, world, Gdx.graphics.getWidth()/2, 100);
