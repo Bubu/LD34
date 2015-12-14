@@ -4,6 +4,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.utils.Timer;
 import com.ld34.buttongame.gui.LevelScreen;
 import com.ld34.buttongame.gui.MenuScreen;
 import com.ld34.buttongame.gui.PrologueScreen;
@@ -11,7 +12,7 @@ import com.ld34.buttongame.gui.SelectionScreen;
 
 public class ButtonGame extends Game {
     com.ld34.buttongame.gui.MenuScreen menuScreen;
-    com.ld34.buttongame.gui.LevelScreen levelScreen;
+    public com.ld34.buttongame.gui.LevelScreen levelScreen;
     public boolean isRunning;
     private Screen currentScreen;
     public com.ld34.buttongame.level.Level currentLevel;
@@ -66,8 +67,12 @@ public class ButtonGame extends Game {
     public void startLevel(com.ld34.buttongame.level.Level level) {
         if(level != null) {
             Gdx.app.log("Debug", "Starting level " + level.getNumber());
+            Timer.instance().clear();
+            Resources.getInstance().powerdown.stop();
+            levelScreen.restart.setVisible(false);
             buttonOnTheWay = false;
             currentLevel = level;
+            currentLevel.init();
             currentScreen = levelScreen;
             setScreen(levelScreen);
         }

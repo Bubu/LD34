@@ -1,6 +1,5 @@
 package com.ld34.buttongame;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.math.Vector3;
@@ -14,6 +13,10 @@ public class InputHandler implements InputProcessor {
     public boolean keyDown(int keycode) {
         if(keycode == Input.Keys.ESCAPE ) {
             game.setScreen(game.menuScreen);
+            return true;
+        }
+        else if (keycode == Input.Keys.R){
+            game.restart();
             return true;
         }
         return false;
@@ -32,12 +35,14 @@ public class InputHandler implements InputProcessor {
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
         Vector3 worldCoords = game.levelScreen.camera.unproject(new Vector3(screenX, screenY,0));
-        double dist = Math.sqrt(Math.pow(worldCoords.x - game.currentLevel.buttonRed.getCenterX(),2.0) + Math.pow(worldCoords.y - game.currentLevel.buttonRed.getCenterY(), 2.0));
-        if(dist<game.currentLevel.buttonRed.height) {
-        	buttonPressed = true;
+        if(worldCoords.y <=150) {
+            double dist = Math.sqrt(Math.pow(worldCoords.x - game.currentLevel.buttonRed.getCenterX(), 2.0) + Math.pow(worldCoords.y - game.currentLevel.buttonRed.getCenterY(), 2.0));
+            if (dist < game.currentLevel.buttonRed.height) {
+                buttonPressed = true;
+            }
         }
         game.levelScreen.buttonBlue.setTexture(Resources.getInstance().cursorPressed);
-        return true;
+        return false;
     }
     
     @Override
@@ -46,10 +51,10 @@ public class InputHandler implements InputProcessor {
     	double dist = Math.sqrt(Math.pow(worldCoords.x - game.currentLevel.buttonRed.getCenterX(),2.0) + Math.pow(worldCoords.y - game.currentLevel.buttonRed.getCenterY(), 2.0));
     	if(buttonPressed) {
         	if(dist>game.currentLevel.buttonRed.height) {
-        		if(!game.buttonOnTheWay) {
-                    game.buttonOnTheWay = true;
+        		//if(!game.buttonOnTheWay) {
+                //    game.buttonOnTheWay = true;
                     game.currentLevel.buttonRed.startMove((float) ((game.currentLevel.buttonRed.getCenterX() - worldCoords.x) / dist * 10), (float) ((game.currentLevel.buttonRed.getCenterY() - worldCoords.y) / dist * 10));
-                }
+                //}
         		buttonPressed = false;
         	}
     	}

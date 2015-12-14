@@ -21,7 +21,6 @@ public class Target extends GameObject {
         imgOn = new Texture(Gdx.files.internal("graphics/TriggerOn.png"));
         imgOff = new Texture(Gdx.files.internal("graphics/TriggerOff.png"));
         sprite = new Sprite(imgOn);
-        sprite.setSize(80,80);
         this.height = this.sprite.getHeight();
         this.width = this.sprite.getWidth();
 

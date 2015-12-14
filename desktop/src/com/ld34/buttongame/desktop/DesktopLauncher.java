@@ -1,6 +1,5 @@
 package com.ld34.buttongame.desktop;
 
-import com.badlogic.gdx.Files;
 import com.badlogic.gdx.Files.FileType;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
@@ -11,7 +10,8 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
 		cfg.addIcon("icon128.png", FileType.Internal);
 		cfg.addIcon("icon32.png", FileType.Internal);
-		cfg.title = "Button Sniper";
+		cfg.addIcon("icon16.png", FileType.Internal);
+		cfg.title = "Button Sniper!";
 		cfg.height = 700;
 		cfg.width = 800;
 		cfg.resizable = false;

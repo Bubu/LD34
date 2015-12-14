@@ -20,6 +20,7 @@ public final class Resources {
     public final Texture cursor;
     final Texture cursorPressed;
     public final Texture floor;
+    public final Texture bg_level;
     private Skin skin;
 
     public final static float PIXELS_TO_METERS = 100f;
@@ -47,6 +48,8 @@ public final class Resources {
     private Resources() {
         skin = new Skin(Gdx.files.internal("ui/uiskin.json"));
         cursor = new Texture(Gdx.files.internal("graphics/ButtonBlue.png"));
+        bg_level = new Texture(Gdx.files.internal("graphics/bg_level.png"));
+
         floor = new Texture(Gdx.files.internal("graphics/Floor.png"));
         cursorPressed = new Texture(Gdx.files.internal("graphics/ButtonPressed.png"));
         new Texture(Gdx.files.internal("graphics/TriggerOff.png"));

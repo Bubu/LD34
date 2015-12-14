@@ -13,16 +13,25 @@ import com.ld34.buttongame.objects.Target;
 
 public class Level4 extends com.ld34.buttongame.level.Level {
 
-    private final Target target;
+    private Target target;
 
     public Level4(ButtonGame game) {
         super(game);
-        if(Resources.DEBUG){
-            new Obstacle(game, world,0,0,5, Gdx.graphics.getHeight(),0);
-            new Obstacle(game, world,0,Gdx.graphics.getHeight()-5,Gdx.graphics.getWidth(),5,0);
-            new Obstacle(game, world,Gdx.graphics.getWidth()-5,0,5,Gdx.graphics.getHeight(),0);
-            new Obstacle(game, world,0,0,Gdx.graphics.getWidth(), 5,0);
-        }
+    }
+
+    @Override
+    public com.ld34.buttongame.level.Level getNextLevel() {
+        return new Level5(game);
+    }
+
+    @Override
+    public int getNumber() {
+        return 4;
+    }
+
+    @Override
+    public void init() {
+        super.init();
         buttonRed = new Button(game, world, Gdx.graphics.getWidth()/2, 100);
         target = new Target(game, world,Gdx.graphics.getWidth()/2,600);
         final MovingObstacle obstacle2 = new MovingObstacle(game,world,200,500,250,50, new Vector2(4,0));
@@ -38,15 +47,5 @@ public class Level4 extends com.ld34.buttongame.level.Level {
         objects.add(target);
         objects.add(obstacle2);
         objects.add(buttonRed);
-    }
-
-    @Override
-    public com.ld34.buttongame.level.Level getNextLevel() {
-        return new Level5(game);
-    }
-
-    @Override
-    public int getNumber() {
-        return 4;
     }
 }
