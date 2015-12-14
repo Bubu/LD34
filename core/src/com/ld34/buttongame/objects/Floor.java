@@ -39,9 +39,9 @@ public class Floor extends GameObject {
         Timer.schedule(new Timer.Task() {
             @Override
             public void run() {
-                Gdx.app.log("Todo","Display restart message");
+                game.levelScreen.restart.setVisible(true);
             }
-        },1);
+        },0.6f);
     }
 
     @Override

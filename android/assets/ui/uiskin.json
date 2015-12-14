@@ -1,13 +1,11 @@
 {
 com.badlogic.gdx.graphics.g2d.BitmapFont: { default-font: { file: default.fnt } },
-com.badlogic.gdx.graphics.g2d.BitmapFont: { mono-font: { file: mono.fnt } },
-com.badlogic.gdx.graphics.g2d.BitmapFont: { title-font: { file: title.fnt } },
+com.badlogic.gdx.graphics.g2d.BitmapFont: { title-font: { file: title_new.fnt } },
 com.badlogic.gdx.graphics.Color: {
 	green: { a: 1, b: 0, g: 1, r: 0 },
 	white: { a: 1, b: 1, g: 1, r: 1 },
 	red: { a: 1, b: 0, g: 0, r: 1 },
 	black: { a: 1, b: 0, g: 0, r: 0 },
-	purple: { a: 1, b: 0.84, g: 0, r: 0.84 },
 	gray: { a: 1, r: 0.5, g: 0.5, b: 0.5}
 },
 com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {

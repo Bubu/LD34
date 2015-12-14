@@ -77,7 +77,7 @@ public class SelectionScreen extends ScreenAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         stage.act(Gdx.graphics.getDeltaTime());
         stage.getBatch().begin();
-        //stage.getBatch().draw(Ressources.Background(0), 0,0);
+        stage.getBatch().draw(Resources.getInstance().bg_level, 0,0);
         stage.getBatch().end();
         stage.draw();
     }

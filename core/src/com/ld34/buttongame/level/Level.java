@@ -8,10 +8,11 @@ import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.World;
 import com.ld34.buttongame.ButtonGame;
+import com.ld34.buttongame.Resources;
 import com.ld34.buttongame.objects.Button;
 import com.ld34.buttongame.objects.GameObject;
+import com.ld34.buttongame.objects.Obstacle;
 
-import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 
 public abstract class Level {
@@ -21,22 +22,25 @@ public abstract class Level {
     public ButtonGame game;
 
     public static Level get(ButtonGame game, int i){
-        try {
-            Class c = Class.forName("com.ld34.buttongame.level.Level" + Integer.toString(i));
-            Class[] types = {game.getClass()};
-            Constructor constructor = c.getConstructor(types);
-            Object[] parameters = {game};
-
-            return (Level)constructor.newInstance(parameters);
-        }catch (Exception e){
-            Gdx.app.log("Error", "Level" + Integer.toString(i) + " not found!");
+        switch (i) {
+            case 1:
+                return new Level1(game);
+            case 2:
+                return new Level2(game);
+            case 3:
+                return new Level3(game);
+            case 4:
+                return new Level4(game);
+            case 5:
+                return new Level5(game);
+            default:
+                Gdx.app.log("Error", "Level" + Integer.toString(i) + " not found!");
         }
         return null;
     }
 
     public Level(ButtonGame game) {
         this.game = game;
-        objects = new ArrayList<GameObject>();
         world = new World(new Vector2(0, 0f), true);
         world.setContactListener(new ContactListener() {
 
@@ -71,4 +75,14 @@ public abstract class Level {
     public abstract Level getNextLevel();
 
     public abstract int getNumber();
+
+    public void init(){
+        objects = new ArrayList<GameObject>();
+        if(Resources.DEBUG){
+            new Obstacle(game, world,0,0,5, Gdx.graphics.getHeight(),0);
+            new Obstacle(game, world,0,Gdx.graphics.getHeight()-5,Gdx.graphics.getWidth(),5,0);
+            new Obstacle(game, world,Gdx.graphics.getWidth()-5,0,5,Gdx.graphics.getHeight(),0);
+            new Obstacle(game, world,0,0,Gdx.graphics.getWidth(), 5,0);
+        }
+    }
 }
