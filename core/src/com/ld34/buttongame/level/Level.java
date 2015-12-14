@@ -11,6 +11,7 @@ import com.ld34.buttongame.ButtonGame;
 import com.ld34.buttongame.Resources;
 import com.ld34.buttongame.objects.Button;
 import com.ld34.buttongame.objects.GameObject;
+import com.ld34.buttongame.objects.Laser;
 import com.ld34.buttongame.objects.Obstacle;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public abstract class Level {
     public final World world;
     public Button buttonRed;
     public ButtonGame game;
+    public ArrayList<Laser> laserList;
 
     public static Level get(ButtonGame game, int i){
         switch (i) {
@@ -78,6 +80,7 @@ public abstract class Level {
 
     public void init(){
         objects = new ArrayList<GameObject>();
+        laserList = new ArrayList<Laser>();
         if(Resources.DEBUG){
             new Obstacle(game, world,0,0,5, Gdx.graphics.getHeight(),0);
             new Obstacle(game, world,0,Gdx.graphics.getHeight()-5,Gdx.graphics.getWidth(),5,0);

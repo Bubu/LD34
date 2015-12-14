@@ -18,6 +18,7 @@ import com.ld34.buttongame.ButtonGame;
 import com.ld34.buttongame.InputHandler;
 import com.ld34.buttongame.Resources;
 import com.ld34.buttongame.objects.GameObject;
+import com.ld34.buttongame.objects.Laser;
 
 public class LevelScreen extends ScreenAdapter {
     private final SpriteBatch batch;
@@ -56,8 +57,15 @@ public class LevelScreen extends ScreenAdapter {
         debugMatrix = batch.getProjectionMatrix().cpy().scale(Resources.PIXELS_TO_METERS,
                 Resources.PIXELS_TO_METERS, 0);
         batch.begin();
+        
+        // Drawing game objects and Lasers
+        
         for(GameObject object:game.currentLevel.objects) {
             object.draw(batch);
+            object.step();
+        }
+        for(Laser laser:game.currentLevel.laserList) {
+            laser.draw(batch);
         }
         Vector3 worldCoords = camera.unproject(new Vector3(Gdx.input.getX(),Gdx.input.getY(), 0));
         buttonBlue.setCenter(worldCoords.x, worldCoords.y);

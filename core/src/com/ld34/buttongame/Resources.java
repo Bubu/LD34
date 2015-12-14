@@ -24,7 +24,7 @@ public final class Resources {
     private Skin skin;
 
     public final static float PIXELS_TO_METERS = 100f;
-    public final static boolean DEBUG = false;
+    public final static boolean DEBUG = true;
     private static Resources instance = null;
     
     public final String[] prologue;

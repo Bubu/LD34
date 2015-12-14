@@ -49,6 +49,9 @@ public class Target extends GameObject {
                 @Override
                 public void run() {
                     Resources.getInstance().powerdown.play();
+                    for(Laser laser:game.currentLevel.laserList){
+                    laser.powerDown(true);
+                    }                      
                 }
             }, 0.1f);
             winTask = new Timer.Task() {
@@ -64,6 +67,9 @@ public class Target extends GameObject {
             Resources.getInstance().on.play();
             Resources.getInstance().powerdown.stop();
             winTask.cancel();
+            for(Laser laser:game.currentLevel.laserList){
+            laser.powerDown(false);
+            }   
         }
         state = !state;
 }
