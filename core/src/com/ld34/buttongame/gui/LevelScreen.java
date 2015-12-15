@@ -52,7 +52,9 @@ public class LevelScreen extends ScreenAdapter {
         
         
         
-        game.currentLevel.world.step(1f / 60f, 8, 3);
+        if(!game.isPaused) {
+            game.currentLevel.world.step(1f / 60f, 8, 3);
+        }
         batch.setProjectionMatrix(camera.combined);
         debugMatrix = batch.getProjectionMatrix().cpy().scale(Resources.PIXELS_TO_METERS,
                 Resources.PIXELS_TO_METERS, 0);
@@ -87,12 +89,14 @@ public class LevelScreen extends ScreenAdapter {
         Gdx.input.setInputProcessor(this.inputHandler);
         Gdx.graphics.setCursor(customCursor);
         Timer.instance().start();
+        game.isPaused = false;
         Resources.getInstance().powerdown.resume();
     }
 
     public void hide () {
         Gdx.graphics.setCursor(null);
         Timer.instance().stop();
+        game.isPaused = true;
         Resources.getInstance().powerdown.pause();
     }
 
@@ -101,5 +105,15 @@ public class LevelScreen extends ScreenAdapter {
 
     public void showWinDialog() {
         //Gdx.app.log("TODO", "Show Win Dialogue");
+    }
+
+    @Override
+    public void pause() {
+        game.isPaused = true;
+    }
+
+    @Override
+    public void resume() {
+        game.isPaused = false;
     }
 }

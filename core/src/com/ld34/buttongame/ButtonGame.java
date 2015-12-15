@@ -36,6 +36,7 @@ public class ButtonGame extends Game {
 	private boolean interlude;
 	private boolean finalDialogue;
 	private boolean epilogue;
+    public boolean isPaused;
 
     @Override
 	public void create () {
