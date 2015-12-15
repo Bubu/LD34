@@ -35,7 +35,17 @@ public final class Resources {
     public final String[] finalDialogue;
     public final Color[] finalDialogueColor;
     public final int[] finalDialogueAlign;
-    final int finalDialogueLength = 8;
+    public final int finalDialogueLength = 8;
+    
+    public final String[] epilogue;
+    public final Color[] epilogueColor;
+    public final int[] epilogueAlign;
+    public final int epilogueLength = 8;
+    
+    public final String[] interlude;
+    public final Color[] interludeColor;
+    public final int[] interludeAlign;
+    public final int interludeLength = 10;
     
 
     public static Resources getInstance() {
@@ -99,6 +109,54 @@ public final class Resources {
         prologue[7] = "Jimmy: Don't worry. I'm on it!";
         prologueAlign[7] = Align.right;
         
+        // Interlude
+        
+        interlude = new String[interludeLength];
+        interludeColor = new Color[interludeLength];
+        interludeAlign = new int[interludeLength];
+        
+        interludeColor[0] = Color.WHITE;
+        interlude[0] = "RING, RING ...";
+        interludeAlign[0] = Align.center;
+        
+        interludeColor[1] = Color.RED;
+        interlude[1] = "Jimmy: I should have turned of my phone ... Hello?";
+        interludeAlign[1] = Align.right;
+        
+        interludeColor[2] = Color.YELLOW;
+        interlude[2] = "Prof Zipper: Thank god, Jimmy, you are still alive." ; 
+        interludeAlign[2] = Align.left;
+        
+        interludeColor[3] = Color.RED;
+        interlude[3] = "Jimmy: Listen, I can't really talk right now ... ";
+        interludeAlign[3] = Align.right;
+        
+        interludeColor[4] = Color.YELLOW;
+        interlude[4] = "Prof Zipper: But I must warn you! My gravitational measurements show that" +
+        		" Captain Calamari uses a powerful space-time concentrator.";
+        interludeAlign[4] = Align.left;
+        
+        interludeColor[5] = Color.RED;
+        interlude[5] = "Jimmy: What?";
+        interludeAlign[5] = Align.right;
+        
+        interludeColor[6] = Color.YELLOW;
+        interlude[6] = "Prof. Zipper: It's a device that warps gravity.";
+        interludeAlign[6] = Align.left;
+        
+        interludeColor[7] = Color.RED;
+        interlude[7] = "Jimmy: Wow ... Awesome!";
+        interludeAlign[7] = Align.right;
+        
+        interludeColor[8] = Color.YELLOW;
+        interlude[8] = "Prof. Zipper: It is not awesome, it is dangerous! Your skills are not" +
+        		" prepared for that.";
+        interludeAlign[8] = Align.left;
+        
+        interludeColor[9] = Color.RED;
+        interlude[9] = "Jimmy: Let's see ...";
+        interludeAlign[9] = Align.right;
+        
         // Final Dialogue!
         
         finalDialogue = new String[finalDialogueLength];
@@ -114,8 +172,8 @@ public final class Resources {
         finalDialogueAlign[1] = Align.right;
         
         finalDialogueColor[2] = Color.CYAN;
-        finalDialogue[2] = "Captain Calamari: Who dares to intrude into my secret hideout? I will" +
-        		" devour your bones! Arrr!";      
+        finalDialogue[2] = "Captain Calamari: Who dares t'intrude into me secret hideout? I will" +
+        		" devour yer bones! Arrr!";      
         finalDialogueAlign[2] = Align.left;
         
         finalDialogueColor[3] = Color.RED;
@@ -123,22 +181,64 @@ public final class Resources {
         finalDialogueAlign[3] = Align.right;
         
         finalDialogueColor[4] = Color.CYAN;
-        finalDialogue[4] = "Captain Calamari: Jimmy Two-Button! Of course! Who else would be so brashly stupid to come" +
+        finalDialogue[4] = "Captain Calamari: Jimmy Two-Button, thee scurvy lubber! F'course! Who else would be so brashly stupid t'come" +
         		" into my lair with nothing more than two rotting buttons!";
         finalDialogueAlign[4] = Align.left;
         
         finalDialogueColor[5] = Color.RED;
-        finalDialogue[5] = "Jimmy: Yeah ... ";
+        finalDialogue[5] = "Jimmy: True ... ";
         finalDialogueAlign[5] = Align.right;
         
         finalDialogueColor[6] = Color.CYAN;
-        finalDialogue[6] = "Captain Calamari: Once I mutate all my aquatic allies, noone can stop me from" +
-        		" taking over the world. Arrr!";
+        finalDialogue[6] = "Captain Calamari: Avast! Once I mutate all me aquatic allies," +
+        		" none of ye lice-'nfested bilge-rats can stop me from" +
+        		" taking o'er the world. Arrr!";
         finalDialogueAlign[6] = Align.left;
         
         finalDialogueColor[7] = Color.RED;
         finalDialogue[7] = "Jimmy: We'll see about that, Captain!";
         finalDialogueAlign[7] = Align.right;
+        
+        // Epilogue
+        
+        epilogue = new String[epilogueLength];
+        epilogueColor = new Color[epilogueLength];
+        epilogueAlign = new int[epilogueLength];
+        
+        epilogueColor[0] = Color.CYAN;
+        epilogue[0] = "NOOOOOO! ... ";
+        epilogueAlign[0] = Align.center;
+        
+        epilogueColor[1] = Color.RED;
+        epilogue[1] = "Jimmy: Sorry.";
+        epilogueAlign[1] = Align.right;
+        
+        epilogueColor[2] = Color.CYAN;
+        epilogue[2] = "Captain Calamari: Ye'll meet the rope's end for that, me bucko! Ye n'yer stupid buttons ruined everything!" +
+        		" ... the elixir! ... Me can feel myself mut'ting ... Curse ye, Jimmy Two-Button, by the mighty sea, curse yeeee!";      
+        epilogueAlign[2] = Align.left;
+        
+        epilogueColor[3] = Color.RED;
+        epilogue[3] = "Jimmy: Sorry, man.";
+        epilogueAlign[3] = Align.right;
+        
+        epilogueColor[4] = Color.CYAN;
+        epilogue[4] = "Captain Calamari: What is this? Me have returned to ma human form. " +
+        		" The mutation elixir must have repaired me epig'netic histone modif'cation. Oh, most joyous of all th'days!" +
+        		" Thank ye, Jimmy Two-Button, thank ye!";
+        epilogueAlign[4] = Align.left;
+        
+        epilogueColor[5] = Color.RED;
+        epilogue[5] = "Jimmy: No biggie. ";
+        epilogueAlign[5] = Align.right;
+        
+        epilogueColor[6] = Color.CYAN;
+        epilogue[6] = "Captain Calamari: Arrr! T'is a biggie! Tell me, what you want and I'll do it for ye.";
+        epilogueAlign[6] = Align.left;
+        
+        epilogueColor[7] = Color.RED;
+        epilogue[7] = "Jimmy: Do you still have any fish sticks? I am starving!";
+        epilogueAlign[7] = Align.right;
     }
     
     

@@ -1,23 +1,19 @@
 package com.ld34.buttongame.gui;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.ui.VerticalGroup;
-import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener.ChangeEvent;
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
@@ -25,16 +21,17 @@ import com.ld34.buttongame.ButtonGame;
 import com.ld34.buttongame.Resources;
 import com.ld34.buttongame.level.Level;
 
-public class FinalDialogueScreen extends ScreenAdapter {
+public class EpilogueScreen extends ScreenAdapter{
+
 	ButtonGame game;
 	Stage stage;
 	int count = 0;
-	int maxCount = Resources.getInstance().finalDialogueLength;
+	int maxCount = Resources.getInstance().epilogueLength;
 	Label dialogueLabel;
 	Image leftPerson;
 	Image rightPerson;
 
-	public FinalDialogueScreen(final ButtonGame game) {
+	public EpilogueScreen(final ButtonGame game) {
 	        this.game = game;
 	        stage = new Stage(new ScreenViewport());
 	        
@@ -42,8 +39,7 @@ public class FinalDialogueScreen extends ScreenAdapter {
 	        dialogueLabel.setWrap(true);
 	        dialogueLabel.setColor(Color.CYAN);
 	        
-	        leftPerson = new Image(new Texture(Gdx.files.internal("graphics/CaptainCalamari.png")));
-	        leftPerson.setVisible(false);
+	        leftPerson = new Image(new Texture(Gdx.files.internal("graphics/DefeatedCaptain.png")));
 	        rightPerson = new Image(new Texture(Gdx.files.internal("graphics/JimmyTwoButton.png")));
 	        leftPerson.setScaling(Scaling.none);
 	        rightPerson.setScaling(Scaling.none);
@@ -54,7 +50,7 @@ public class FinalDialogueScreen extends ScreenAdapter {
 	            	if(count<maxCount){
 	            		count = advanceDialogue(count);	            		
 	            	}else{
-	        	        game.startLevel(Level.get(game, 2));
+	        	        game.startLevel(Level.get(game, 3));
 	            	}
 	            	return true;
 	            }
@@ -86,11 +82,12 @@ public class FinalDialogueScreen extends ScreenAdapter {
 	    }
 	    
 	    public int advanceDialogue(int currCount) {
-	    	dialogueLabel.setText(Resources.getInstance().finalDialogue[currCount]);
-	    	dialogueLabel.setColor(Resources.getInstance().finalDialogueColor[currCount]);
-    		dialogueLabel.setAlignment(Resources.getInstance().finalDialogueAlign[currCount]);
-	    	if(currCount == 2){
-	    		leftPerson.setVisible(true);
+	    	dialogueLabel.setText(Resources.getInstance().epilogue[currCount]);
+	    	dialogueLabel.setColor(Resources.getInstance().epilogueColor[currCount]);
+    		dialogueLabel.setAlignment(Resources.getInstance().epilogueAlign[currCount]);
+	    	if(currCount == 4){
+	    		//leftPerson = new Image(new Texture(Gdx.files.internal("graphics/HumanCaptain.png")));;
+	    		leftPerson.setDrawable( new SpriteDrawable(new Sprite(new Texture(Gdx.files.internal("graphics/HumanCaptain.png")))));
 	    	}
 	    	return count + 1;
 	    }
@@ -107,4 +104,5 @@ public class FinalDialogueScreen extends ScreenAdapter {
 	    public void dispose () {
 	        stage.dispose();
 	    }
-	}
+
+}
