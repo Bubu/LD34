@@ -46,7 +46,7 @@ public final class Resources {
     public final Color[] interludeColor;
     public final int[] interludeAlign;
     public final int interludeLength = 10;
-    
+	public Texture bg_menu;
 
     public static Resources getInstance() {
         if(instance == null) {
@@ -59,6 +59,7 @@ public final class Resources {
         skin = new Skin(Gdx.files.internal("ui/uiskin.json"));
         cursor = new Texture(Gdx.files.internal("graphics/ButtonBlue.png"));
         bg_level = new Texture(Gdx.files.internal("graphics/bg_level.png"));
+        bg_menu = new Texture(Gdx.files.internal("graphics/bg_title.png"));
 
         floor = new Texture(Gdx.files.internal("graphics/Floor.png"));
         cursorPressed = new Texture(Gdx.files.internal("graphics/ButtonPressed.png"));
