@@ -6,6 +6,7 @@ import com.ld34.buttongame.Resources;
 import com.ld34.buttongame.objects.Button;
 import com.ld34.buttongame.objects.Floor;
 import com.ld34.buttongame.objects.HorizontalObstacle;
+import com.ld34.buttongame.objects.Laser;
 import com.ld34.buttongame.objects.Obstacle;
 import com.ld34.buttongame.objects.Target;
 import com.ld34.buttongame.objects.VerticalObstacle;
@@ -38,5 +39,9 @@ public class Level2 extends com.ld34.buttongame.level.Level {
         objects.add(obstacle2);
         objects.add(obstacle3);
         objects.add(buttonRed);
+        Laser laser = new Laser(game, -7, 200, 25f);
+        Laser laser2 = new Laser(game, -7, 450, -5f);
+        laserList.add(laser);
+        laserList.add(laser2);
     }
 }

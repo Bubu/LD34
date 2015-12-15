@@ -6,6 +6,7 @@ import com.badlogic.gdx.utils.Timer;
 import com.ld34.buttongame.ButtonGame;
 import com.ld34.buttongame.objects.Button;
 import com.ld34.buttongame.objects.Floor;
+import com.ld34.buttongame.objects.Laser;
 import com.ld34.buttongame.objects.LongVerticalObstacle;
 import com.ld34.buttongame.objects.MovingObstacle;
 import com.ld34.buttongame.objects.Obstacle;
@@ -46,5 +47,7 @@ public class Level4 extends com.ld34.buttongame.level.Level {
         objects.add(wall2);
         objects.add(obstacle);
         objects.add(buttonRed);
+        Laser laser = new Laser(game, -7, 150, 0f);
+        laserList.add(laser);
     }
 }

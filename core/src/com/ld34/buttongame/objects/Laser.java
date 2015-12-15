@@ -18,6 +18,7 @@ public class Laser{
 	public Laser(ButtonGame game, float xPos, float yPos, float Angle) {
 		
 		sprite = new Sprite(new Texture(Gdx.files.internal("graphics/Laserbeam.png")));
+		sprite.setOrigin(0,0);
 		sprite.setRotation(Angle);
 		sprite.setPosition(xPos, yPos);
 		isVisible = true;
@@ -34,8 +35,6 @@ public class Laser{
                 isVisible = true;
             }
         };
-		
-		// TODO Auto-generated constructor stub
 	}
 	
 	public void draw(Batch batch){
