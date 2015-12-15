@@ -50,7 +50,7 @@ public class EpilogueScreen extends ScreenAdapter{
 	            	if(count<maxCount){
 	            		count = advanceDialogue(count);	            		
 	            	}else{
-	        	        game.startLevel(Level.get(game, 3));
+	        	        game.levelSelect();
 	            	}
 	            	return true;
 	            }

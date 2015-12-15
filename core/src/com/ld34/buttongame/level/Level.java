@@ -43,6 +43,8 @@ public abstract class Level {
                 return new Level8(game);
             case 9:
                 return new Level9(game);
+            case 10:
+                return new Level10(game);
             default:
                 Gdx.app.log("Error", "Level" + Integer.toString(i) + " not found!");
         }

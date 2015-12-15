@@ -54,7 +54,7 @@ public class FinalDialogueScreen extends ScreenAdapter {
 	            	if(count<maxCount){
 	            		count = advanceDialogue(count);	            		
 	            	}else{
-	        	        game.startLevel(Level.get(game, 2));
+	        	        game.startLevel(Level.get(game, 10));
 	            	}
 	            	return true;
 	            }

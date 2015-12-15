@@ -46,17 +46,17 @@ public class InterludeScreen extends ScreenAdapter{
 	        rightPerson.setScaling(Scaling.none);
 	        
 	        stage.addListener(new InputListener() {
-	            @Override
-	            public boolean touchDown(InputEvent event, float screenX, float screenY, int pointer, int button) {
-	            	
-	            	if(count<maxCount){
-	            		count = advanceDialogue(count);	            		
-	            	}else{
-	            		game.levelSelect();
-	            	}
-	            	return true;
-	            }
-	        });
+				@Override
+				public boolean touchDown(InputEvent event, float screenX, float screenY, int pointer, int button) {
+
+					if (count < maxCount) {
+						count = advanceDialogue(count);
+					} else {
+						game.startLevel(Level.get(game, 6));
+					}
+					return true;
+				}
+			});
 
 	        Table table = new Table();
 	        table.setFillParent(true);
@@ -75,8 +75,6 @@ public class InterludeScreen extends ScreenAdapter{
 			}
 	        
 	        stage.addActor(table);
-	        
-	        game.startLevel(Level.get(game, 5));
 	    }
 
 	    @Override

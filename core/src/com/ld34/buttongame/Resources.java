@@ -24,7 +24,7 @@ public final class Resources {
     private Skin skin;
 
     public final static float PIXELS_TO_METERS = 100f;
-    public final static boolean DEBUG = true;
+    public final static boolean DEBUG = false;
     private static Resources instance = null;
     
     public final String[] prologue;
@@ -121,7 +121,7 @@ public final class Resources {
         interludeAlign[0] = Align.center;
         
         interludeColor[1] = Color.RED;
-        interlude[1] = "Jimmy: I should have turned of my phone ... Hello?";
+        interlude[1] = "Jimmy: I should have turned off my phone ... Hello?";
         interludeAlign[1] = Align.right;
         
         interludeColor[2] = Color.YELLOW;
@@ -150,7 +150,7 @@ public final class Resources {
         interludeAlign[7] = Align.right;
         
         interludeColor[8] = Color.YELLOW;
-        interlude[8] = "Prof. Zipper: It is not awesome, it is dangerous! Your skills are not" +
+        interlude[8] = "Prof. Zipper: It is not awesome, it is dangerous! You are not" +
         		" prepared for that.";
         interludeAlign[8] = Align.left;
         
