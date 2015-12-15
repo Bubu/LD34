@@ -18,8 +18,9 @@ public abstract class GameObject {
     }
 
     public void draw(SpriteBatch batch){
-        sprite.setPosition((body.getPosition().x * Resources.PIXELS_TO_METERS) - sprite.getWidth()/2, (body.getPosition().y * Resources.PIXELS_TO_METERS)- sprite.getHeight()/2);
+        sprite.setOriginCenter();
         sprite.setRotation((float)Math.toDegrees(body.getAngle()));
+        sprite.setPosition((body.getPosition().x * Resources.PIXELS_TO_METERS) - sprite.getWidth() / 2, (body.getPosition().y * Resources.PIXELS_TO_METERS) - sprite.getHeight() / 2);
         batch.draw(sprite, sprite.getX(), sprite.getY(),sprite.getOriginX(),
                 sprite.getOriginY(), sprite.getWidth(),sprite.getHeight(),
                 sprite.getScaleX(),sprite.getScaleY(),sprite.getRotation());

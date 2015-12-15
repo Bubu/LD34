@@ -35,6 +35,7 @@ public class MovingCaptain extends GameObject {
         
         body.setType(BodyDef.BodyType.KinematicBody);
         body.setLinearVelocity(dir);
+        super.init();
     }
     public void turn(){
         Vector2 dir = body.getLinearVelocity();

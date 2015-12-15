@@ -9,6 +9,7 @@ import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.Timer;
 import com.ld34.buttongame.ButtonGame;
 import com.ld34.buttongame.Resources;
 
@@ -59,14 +60,23 @@ public class Attractor extends GameObject{
 		Vector2 Force = new Vector2();
 		Force.x = (float) (- dist.x/Math.pow(dist.len(),1.5));
 		Force.y = (float) (- dist.y/Math.pow(dist.len(),1.5));
-		
 		Force.scl(mult);
+		//Force.x = Math.min(Force.x, 0.01f);
+		//Force.y = Math.min(Force.y, 0.01f);
 
-		game.currentLevel.buttonRed.body.applyLinearImpulse(Force, buttonPos, true); //  applyForceToCenter((float) ForceX, (float) ForceY, true);
-		game.currentLevel.buttonRed.body.setLinearDamping((float) (0.1 + 0.9/(1+dist.len()))); //  applyForceToCenter((float) ForceX, (float) ForceY, true);
-		
-		Gdx.app.log("Force:", Force.x + "");
+		//game.currentLevel.buttonRed.body.applyLinearImpulse(Force, buttonPos, true);
+        game.currentLevel.buttonRed.body.applyForceToCenter(Force, true);
+		game.currentLevel.buttonRed.body.setLinearDamping((float) (100 / Math.exp(dist.len()))); //  applyForceToCenter((float) ForceX, (float) ForceY, true);
 	}
 
-	
+    @Override
+    public void handleCollision() {
+
+        Timer.schedule(new Timer.Task() {
+            @Override
+            public void run() {
+                game.currentLevel.objects.remove(game.currentLevel.buttonRed);
+            }
+        },0.5f);
+    }
 }
