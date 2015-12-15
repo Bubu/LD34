@@ -19,8 +19,8 @@ public class Obstacle extends GameObject {
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = shape;
         fixtureDef.density = 1f;
-        fixtureDef.friction = 0.1f;
-        fixtureDef.restitution= 0.9f;
+        fixtureDef.friction = 0f;
+        fixtureDef.restitution= 0.95f;
         bodyDef.position.set((xPos + sizeX / 2) / Resources.PIXELS_TO_METERS, (yPos + sizeY / 2) / Resources.PIXELS_TO_METERS);
 
         body = world.createBody(bodyDef);

@@ -21,7 +21,8 @@ public class Button extends GameObject {
 
         BodyDef bodyDef = new BodyDef();
 		bodyDef.type = BodyDef.BodyType.DynamicBody;
-        bodyDef.linearDamping = 0.1f;
+        bodyDef.linearDamping = 0.05f;
+        bodyDef.angularDamping = 0.01f;
 
         CircleShape shape = new CircleShape();
 		shape.setRadius(sprite.getWidth() / 2 / Resources.PIXELS_TO_METERS);
@@ -29,8 +30,8 @@ public class Button extends GameObject {
         FixtureDef fixtureDef = new FixtureDef();
 		fixtureDef.shape = shape;
 		fixtureDef.density = 1f;
-        fixtureDef.friction = 0.1f;
-        fixtureDef.restitution = 0.9f;
+        fixtureDef.friction = 1f;
+        fixtureDef.restitution = 0f;
 		bodyDef.position.set(xPos/ Resources.PIXELS_TO_METERS, yPos/ Resources.PIXELS_TO_METERS);
 
 		this.body = world.createBody(bodyDef);

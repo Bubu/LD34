@@ -29,7 +29,7 @@ public class Level1 extends com.ld34.buttongame.level.Level {
         target = new Target(game, world,Gdx.graphics.getWidth()/2,600);
         Obstacle wall1 = new LongVerticalObstacle(game,world,150,0,50,700);
         Obstacle wall2 = new LongVerticalObstacle(game,world,600,0,50,700);
-        Laser laser = new Laser(game, 0, 300, 0f);
+        Laser laser = new Laser(game, 0, 150, 0f);
         objects.add(new Floor(game,world));
         objects.add(target);
         objects.add(wall1);

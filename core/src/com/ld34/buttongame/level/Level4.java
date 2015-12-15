@@ -29,7 +29,7 @@ public class Level4 extends com.ld34.buttongame.level.Level {
         super.init();
         buttonRed = new Button(game, world, Gdx.graphics.getWidth()/2, 100);
         target = new Target(game, world,Gdx.graphics.getWidth()/2,600);
-        final MovingObstacle obstacle = new MovingObstacle(game,world,75,500,250,50, new Vector2(4,0));
+        final MovingObstacle obstacle = new MovingObstacle(game,world,75,500,250,50, new Vector2(4,0), 0);
         Obstacle wall1 = new LongVerticalObstacle(game,world,45,0,50,700);
         Obstacle wall2 = new LongVerticalObstacle(game,world,705,0,50,700);
 
