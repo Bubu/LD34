@@ -14,7 +14,6 @@ import com.ld34.buttongame.objects.Target;
 public class Level1 extends com.ld34.buttongame.level.Level {
 
     private Target target;
-	private MovingCaptain captain;
 
     public Level1(ButtonGame game) {
         super(game);
@@ -30,7 +29,6 @@ public class Level1 extends com.ld34.buttongame.level.Level {
         super.init();
         buttonRed = new Button(game, world, Gdx.graphics.getWidth()/2, 100);
         target = new Target(game, world,Gdx.graphics.getWidth()/2,600);
-        captain = new MovingCaptain(game, world, 200, 200, new Vector2(1,1));
         Obstacle wall1 = new LongVerticalObstacle(game,world,150,0,50,700);
         Obstacle wall2 = new LongVerticalObstacle(game,world,600,0,50,700);
         objects.add(new Floor(game,world));

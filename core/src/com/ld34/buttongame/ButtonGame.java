@@ -12,9 +12,12 @@ import com.ld34.buttongame.gui.LevelScreen;
 import com.ld34.buttongame.gui.MenuScreen;
 import com.ld34.buttongame.gui.PrologueScreen;
 import com.ld34.buttongame.gui.SelectionScreen;
+import com.ld34.buttongame.level.Level10;
 import com.ld34.buttongame.level.Level2;
 import com.ld34.buttongame.level.Level3;
 import com.ld34.buttongame.level.Level5;
+import com.ld34.buttongame.level.Level6;
+import com.ld34.buttongame.level.LevelEpi;
 
 public class ButtonGame extends Game {
     com.ld34.buttongame.gui.MenuScreen menuScreen;
@@ -84,20 +87,17 @@ public class ButtonGame extends Game {
     public void startLevel(com.ld34.buttongame.level.Level level) {
         if(level != null) {
         	
-        	Gdx.app.log("Here", level + "");
-        	
-        	if(level instanceof Level5 && interlude){
+        	if(level instanceof Level6 && interlude){
         		currentScreen = interludeScreen;
         		setScreen(currentScreen);
         		interlude = false;
-        	}else if(level instanceof Level2 && finalDialogue){
+        	}else if(level instanceof Level10 && finalDialogue && !Resources.DEBUG){
         		currentScreen = finalDialogueScreen;
         		setScreen(currentScreen);
         		finalDialogue = false;
-        	}else if(level instanceof Level3 && epilogue){
+        	}else if(level instanceof LevelEpi && epilogue){
         		currentScreen = epilogueScreen;
         		setScreen(currentScreen);
-        		epilogue = false;
         	}else{
         	
             Timer.instance().clear();

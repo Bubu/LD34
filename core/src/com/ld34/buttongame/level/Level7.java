@@ -25,32 +25,45 @@ public class Level7 extends Level {
     public Level getNextLevel() {
         return new Level8(game);
     }
-
     @Override
     public void init() {
         super.init();
         buttonRed = new Button(game, world, Gdx.graphics.getWidth()/2, 100);
-        target = new Target(game, world, 650,350);
+        target = new Target(game, world,Gdx.graphics.getWidth()/2,600);
+        final MovingObstacle obstacle1 = new MovingObstacle(game,world,50,500,175,50, new Vector2(2,0), 0);
+        final MovingObstacle obstacle2 = new MovingObstacle(game,world,250,400,175,50, new Vector2(4,0), 0);
+        final MovingObstacle obstacle3 = new MovingObstacle(game,world,450,300,175,50, new Vector2(6,0), 0);
         Obstacle wall1 = new LongVerticalObstacle(game,world,0,0,50,700);
-        Obstacle obstacle1 = new HorizontalObstacle(game,world,250,550,250,50);
-        Obstacle obstacle2 = new HorizontalObstacle(game,world,450,200,350,50);
-        final MovingObstacle moving = new MovingObstacle(game,world,50,450,175,50, new Vector2(3,0), 0);
+        Obstacle wall2 = new LongVerticalObstacle(game,world,750,0,50,700);
 
         Timer.schedule(new Timer.Task() {
             @Override
             public void run() {
-                moving.turn();
+                obstacle1.turn();
             }
-        }, 1.9f, 1.9f);
+        },2.5f,2.5f);
+        Timer.schedule(new Timer.Task() {
+            @Override
+            public void run() {
+                obstacle2.turn();
+            }
+        },0.8f,1.3f);
+        Timer.schedule(new Timer.Task() {
+            @Override
+            public void run() {
+                obstacle3.turn();
+            }
+        },0.18f,0.9f);
 
         objects.add(new Floor(game, world));
         objects.add(target);
         objects.add(wall1);
+        objects.add(wall2);
         objects.add(obstacle1);
         objects.add(obstacle2);
-        objects.add(moving);
+        objects.add(obstacle3);
         objects.add(buttonRed);
-        Laser laser = new Laser(game, 55, -5, 45f);
+        Laser laser = new Laser(game, -7, 200, 0f);
         laserList.add(laser);
     }
 }

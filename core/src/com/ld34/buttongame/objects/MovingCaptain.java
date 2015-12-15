@@ -8,6 +8,7 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.Timer;
 import com.ld34.buttongame.ButtonGame;
 import com.ld34.buttongame.Resources;
 
@@ -26,12 +27,12 @@ public class MovingCaptain extends GameObject {
         fixtureDef.density = 1f;
         fixtureDef.friction = 0.2f;
         fixtureDef.restitution= 0.9f;
+        fixtureDef.isSensor = true;
         bodyDef.position.set(xPos/ Resources.PIXELS_TO_METERS, yPos/ Resources.PIXELS_TO_METERS);
 
         body = world.createBody(bodyDef);
         body.createFixture(fixtureDef);
-        
-        //Gdx.app.log("MovCapt", "here");
+
         
         body.setType(BodyDef.BodyType.KinematicBody);
         body.setLinearVelocity(dir);
@@ -40,5 +41,17 @@ public class MovingCaptain extends GameObject {
     public void turn(){
         Vector2 dir = body.getLinearVelocity();
         body.setLinearVelocity(dir.scl(-1));
+    }
+
+    @Override
+    public void handleCollision() {
+        super.handleCollision();
+        Timer.schedule( new Timer.Task() {
+            @Override
+            public void run() {
+                game.handleWin();
+            }
+        }, 0.3f);
+        game.isWinning = true;
     }
 }

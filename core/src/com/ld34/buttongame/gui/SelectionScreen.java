@@ -34,7 +34,7 @@ public class SelectionScreen extends ScreenAdapter {
         if(Resources.DEBUG) levelTable.setDebug(true);
 
         int level = game.getLevel();
-        for(int i=1; i<=20; i++){
+        for(int i=1; i<=10; i++){
             TextButton button = new TextButton(Integer.toString(i), Resources.Skin());
             buttonList.add(button);
             final int finalI = i;
@@ -47,7 +47,7 @@ public class SelectionScreen extends ScreenAdapter {
                 button.setDisabled(true);
             }
             levelTable.add(button).size(60).pad(10);
-            if(i%8 == 0) levelTable.row();
+            if(i%5 == 0) levelTable.row();
         }
         table.add(title).padTop(50).padBottom(100);
         table.row();

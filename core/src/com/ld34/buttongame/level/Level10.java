@@ -2,11 +2,13 @@ package com.ld34.buttongame.level;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Timer;
 import com.ld34.buttongame.ButtonGame;
 import com.ld34.buttongame.objects.Button;
 import com.ld34.buttongame.objects.Floor;
 import com.ld34.buttongame.objects.HorizontalObstacle;
 import com.ld34.buttongame.objects.Laser;
+import com.ld34.buttongame.objects.LongVerticalObstacle;
 import com.ld34.buttongame.objects.MovingCaptain;
 import com.ld34.buttongame.objects.Obstacle;
 import com.ld34.buttongame.objects.Target;
@@ -30,12 +32,24 @@ public class Level10 extends Level {
     public void init() {
         super.init();
         buttonRed = new Button(game, world, Gdx.graphics.getWidth()/2, 100);
-        target = new Target(game, world,Gdx.graphics.getWidth()/2,500);
-        Obstacle obstacle = new VerticalObstacle(game,world,100,0,50,350);
-        Obstacle obstacle3 = new VerticalObstacle(game,world,700,0,50,350);
-        Obstacle obstacle2 = new HorizontalObstacle(game,world,275,650,250,50);
-        captain = new MovingCaptain(game, world, 200, 200, new Vector2(1,1));
+        Obstacle wall1 = new LongVerticalObstacle(game,world,0,0,50,700);
+        Obstacle wall2 = new LongVerticalObstacle(game,world,750,0,50,700);
+        Obstacle wall4 = new HorizontalObstacle(game,world,0,650,800,50);
+        captain = new MovingCaptain(game, world, Gdx.graphics.getWidth()/2, 550, new Vector2(3,0));
+        Timer.schedule(new Timer.Task() {
+            @Override
+            public void run() {
+                captain.turn();
+            }
+        }, 0.8f, 1.5f);
 
+        objects.add(new Floor(game,world));
+
+        objects.add(wall4);
+        objects.add(wall1);
+        objects.add(wall2);
         objects.add(captain);
+
+        objects.add(buttonRed);
     }
 }
