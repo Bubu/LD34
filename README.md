@@ -1,6 +1,6 @@
 ## Button Sniper ##
 Made by Stephan Wäldchen & Marcus Hoffmann for [Ludum Dare 34](http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=11335)
-The game is programmed using the libGDX framework (http://libgdx.badlogicgames.com/) and uses some things from their default UI skin.
+The game is programmed using the [libGDX framework](http://libgdx.badlogicgames.com/) and uses some things from their default UI skin.
 Graphics made in Inkscape & Gimp.
 Sounds made with sfxr.
 
